@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "826861794229",
+    "firebase_url": "https://homedork-8404f-default-rtdb.firebaseio.com",
+    "project_id": "homedork-8404f",
+    "storage_bucket": "homedork-8404f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826861794229:android:7878b932704b5ee51c5ffc",
+        "android_client_info": {
+          "package_name": "com.example.homedork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826861794229-9cg7p4e0ka7p8df5gb8qnegsjqmgbra1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2mndyKz8ozmroAGsUiKRdrnB2-azxYyY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826861794229-9cg7p4e0ka7p8df5gb8qnegsjqmgbra1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
