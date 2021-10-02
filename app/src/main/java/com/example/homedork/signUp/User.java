@@ -1,4 +1,4 @@
-package com.example.homedork;
+package com.example.homedork.signUp;
 
 
 public class User {
