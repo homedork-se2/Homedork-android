@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".signUp.LoginActivity">
 
 
     <TextView
@@ -41,18 +41,17 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginTop="168dp"
-        android:layout_marginBottom="63dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="sign up"
         android:textAllCaps="false"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/forgotPassword"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/signIn"
