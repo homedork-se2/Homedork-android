@@ -9,14 +9,14 @@
 
     <Button
         android:id="@+id/registerUser"
-        android:layout_width="163dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="278dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="212dp"
         android:text="Register"
+        android:background="@drawable/custom_button"
         android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/passwordRepeat" />
 
@@ -29,55 +29,68 @@
         android:visibility="invisible"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="178dp"
-        tools:layout_editor_absoluteY="616dp" />
+        tools:layout_editor_absoluteY="667dp" />
 
     <EditText
         android:id="@+id/fulname"
         android:layout_width="300dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="176dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/custom_edit_text"
         android:hint="Name"
         android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
 
     <EditText
         android:id="@+id/email"
         android:layout_width="300dp"
-        android:layout_height="55dp"
+        android:layout_height="50dp"
         android:layout_marginTop="67dp"
+        android:background="@drawable/custom_edit_text"
         android:hint="Email"
         android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/fulname"
+        app:layout_constraintStart_toStartOf="@+id/fulname"
         app:layout_constraintTop_toTopOf="@+id/fulname" />
 
     <EditText
         android:id="@+id/passwordRepeat"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/custom_edit_text"
         android:hint="Repeat password"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/password"
         app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/password"
         app:layout_constraintTop_toTopOf="@+id/password" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginTop="61dp"
+        android:background="@drawable/custom_edit_text"
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toTopOf="@+id/email" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="414dp"
+        android:layout_height="158dp"
+        android:background="@drawable/ic_waveup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/email" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
