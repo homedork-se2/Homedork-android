@@ -25,7 +25,7 @@
         android:layout_height="145dp"
         android:layout_marginTop="8dp"
         android:fontFamily="serif"
-        android:text="HomeDork the next generation of Smart House."
+        android:text="HomeDork the next generation of Smart Houses."
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/black"
@@ -36,34 +36,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Forgot password?"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout4" />
 
     <TextView
         android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="100dp"
-        android:text="Click here."
-        android:textColor="#ffa500"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="224dp"
+        android:text="Forget passowrd"
+        android:textColor="#000000"
         android:textSize="16sp"
-        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+
         app:layout_constraintTop_toTopOf="@+id/textInputLayout4" />
 
     <Button
@@ -117,7 +102,7 @@
             android:id="@+id/email"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:background="@drawable/custom_edit_text"
+            android:background="@drawable/round_corner_toggle_email"
             android:hint=" Enter email"
             android:drawableLeft="@drawable/ic_user"
             android:paddingLeft="10dp"
@@ -152,7 +137,7 @@
             android:id="@+id/password"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/custom_edit_text"
+            android:background="@drawable/round_corner_toggle_password"
             android:drawableStart="@drawable/ic_password"
             android:hint="password"
             android:inputType="textPassword"
