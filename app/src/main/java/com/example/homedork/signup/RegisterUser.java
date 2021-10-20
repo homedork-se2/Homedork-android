@@ -3,6 +3,7 @@ package com.example.homedork.signup;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -15,11 +16,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.homedork.R;
+import com.example.homedork.api.InitializeAPI;
+import com.example.homedork.api.UserSpecificAPICall;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
 
@@ -104,6 +111,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                             public void onComplete(@NonNull Task<Void> task) {
                                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                                 if (task.isSuccessful()) {
+                                    addUserToServer(user.getUid(), user.getDisplayName(), user.getEmail());
                                     Toast.makeText(RegisterUser.this, "User has been register successfully", Toast.LENGTH_LONG).show();
                                     progressBar.setVisibility(View.GONE);
                                     user.sendEmailVerification();
@@ -118,4 +126,23 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
 
     }
+
+   private void addUserToServer(String uuid, String name, String email){
+       UserSpecificAPICall userSpecificAPICall = InitializeAPI.getRetrofitInstance().create(UserSpecificAPICall.class);
+       userSpecificAPICall.addNewUserToServer(uuid, name, email)
+               .enqueue(new Callback<com.example.homedork.api.model.user.User>() {
+           @Override
+           public void onResponse(Call<com.example.homedork.api.model.user.User> call, Response<com.example.homedork.api.model.user.User> response) {
+               Log.e("test101", "onResponse: code: "+response.code());
+           }
+
+           @Override
+           public void onFailure(Call<com.example.homedork.api.model.user.User> call, Throwable t) {
+               Log.e("test101", "onFailure: "+t.getMessage());
+           }
+       });
+
+   }
+
+
 }
