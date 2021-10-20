@@ -1,4 +1,4 @@
-package com.example.homedork.signUp;
+package com.example.homedork.signup;
 
 
 import android.os.Bundle;

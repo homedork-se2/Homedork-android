@@ -11,19 +11,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Homedork">
         <activity
-            android:name=".signUp.ForgotPassword"
+            android:name=".signup.ForgotPassword"
             android:exported="true" />
         <activity
             android:name=".ProfileActivity"
             android:exported="true" />
         <activity
-            android:name=".signUp.RegisterUser"
+            android:name=".signup.RegisterUser"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".signUp.LoginActivity"
+            android:name=".signup.LoginActivity"
             android:exported="true">
 
             <intent-filter>
