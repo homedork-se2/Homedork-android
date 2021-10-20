@@ -1,4 +1,4 @@
-package com.example.homedork.signUp;
+package com.example.homedork.signup;
 
 
 import android.content.Intent;
@@ -94,7 +94,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
                         User user = new User(fullName, email);
                         System.out.println(FirebaseDatabase.getInstance());
-                        System.out.println(  FirebaseDatabase.getInstance().getReference("Users")
+                        System.out.println(FirebaseDatabase.getInstance().getReference("Users")
                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid()));
 
                         FirebaseDatabase.getInstance().getReference("Users")
