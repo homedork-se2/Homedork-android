@@ -1,4 +1,4 @@
-package com.example.homedork.api;
+package com.example.homedork.api.lamp.api;
 
 import com.example.homedork.api.model.device.Lamp;
 
