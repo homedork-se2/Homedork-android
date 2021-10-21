@@ -17,7 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.homedork.R;
 import com.example.homedork.api.InitializeAPI;
-import com.example.homedork.api.UserSpecificAPICall;
+import com.example.homedork.api.user.api.UserRequests;
+import com.example.homedork.api.user.api.UserSpecificAPICall;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -94,6 +95,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             textPassword.requestFocus();
             return;
         }
+        UserRequests userRequests = new UserRequests();
         System.out.println(mAuth);
         progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -103,6 +105,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                         System.out.println(FirebaseDatabase.getInstance());
                         System.out.println(FirebaseDatabase.getInstance().getReference("Users")
                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid()));
+                    System.out.println(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                         FirebaseDatabase.getInstance().getReference("Users")
                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -111,7 +114,9 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                             public void onComplete(@NonNull Task<Void> task) {
                                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                                 if (task.isSuccessful()) {
-                                    addUserToServer(user.getUid(), user.getDisplayName(), user.getEmail());
+                                    System.out.println(user.getUid());
+                                    System.out.println(user);
+                                    userRequests.addUserToServer(user.getUid(), fullName, email);
                                     Toast.makeText(RegisterUser.this, "User has been register successfully", Toast.LENGTH_LONG).show();
                                     progressBar.setVisibility(View.GONE);
                                     user.sendEmailVerification();
@@ -127,22 +132,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
     }
 
-   private void addUserToServer(String uuid, String name, String email){
-       UserSpecificAPICall userSpecificAPICall = InitializeAPI.getRetrofitInstance().create(UserSpecificAPICall.class);
-       userSpecificAPICall.addNewUserToServer(uuid, name, email)
-               .enqueue(new Callback<com.example.homedork.api.model.user.User>() {
-           @Override
-           public void onResponse(Call<com.example.homedork.api.model.user.User> call, Response<com.example.homedork.api.model.user.User> response) {
-               Log.e("test101", "onResponse: code: "+response.code());
-           }
 
-           @Override
-           public void onFailure(Call<com.example.homedork.api.model.user.User> call, Throwable t) {
-               Log.e("test101", "onFailure: "+t.getMessage());
-           }
-       });
-
-   }
 
 
 }

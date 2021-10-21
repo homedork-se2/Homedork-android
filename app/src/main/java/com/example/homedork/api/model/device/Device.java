@@ -2,16 +2,16 @@ package com.example.homedork.api.model.device;
 
 public abstract class Device {
     public String id;
-    public State state;  // "on" and "off" for all device types.
-    public DeviceType deviceType;  // "LAMP","FAN" , "THERMOMETER", "CURTAIN" ...
+    public State state;
+    public DeviceType deviceType;
     public String userId;
-    public double level;  // brightness : Lamp[ceiling + floor] . Speed : Fan . Warmth : Thermometer
+    public double level;
 
     public DeviceType getDeviceType() {
         return deviceType;
     }
 
-    // for some reasons we have this here, but I -@Willz think it will be a time saver soon.
+
     public void setDeviceType(DeviceType deviceType) {
         this.deviceType = deviceType;
     }
