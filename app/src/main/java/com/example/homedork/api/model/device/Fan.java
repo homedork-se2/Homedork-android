@@ -1,9 +1,8 @@
 package com.example.homedork.api.model.device;
 
-public class Lamp extends Device {
+public class Fan extends Device{
 
+    public Fan(){
 
-    public Lamp() {
     }
-
 }
