@@ -1,8 +1,14 @@
 package com.example.homedork.api.fan.api;
 
+import android.content.Context;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
 import com.example.homedork.api.InitializeAPI;
 import com.example.homedork.api.lamp.api.LampSpecificAPICall;
 import com.example.homedork.api.model.device.Fan;
+import com.example.homedork.api.model.device.Lamp;
+import com.example.homedork.dashboard.DashboardService;
 
 import java.util.List;
 
@@ -16,21 +22,37 @@ public class FanRequests {
 
     private FanSpecificAPICall fanSpecificAPICall = InitializeAPI.getRetrofitInstance().create(FanSpecificAPICall.class);
 
-    public void getFans(String userId){
+    public void getFans(LinearLayout layout, ImageView imageView, Context context, String userId){
         fanSpecificAPICall.getFans(userId).enqueue(new Callback<List<Fan>>() {
             @Override
             public void onResponse(Call<List<Fan>> call, Response<List<Fan>> response) {
 
+                if (response.body() != null) {
+                    List<Fan> fans = response.body();
+                    DashboardService dashboardService = new DashboardService();
+
+                    for (int i = 0; i < fans.size(); i++) {
+                        dashboardService.addDynamicRangeSlide(layout, context, i, userId, fans.get(i));
+                        // dashboardService.addDynamicSwitchButton(layout,  context, i, userId, fans.get(i));
+                    }
+                }
             }
 
             @Override
             public void onFailure(Call<List<Fan>> call, Throwable t) {
 
             }
-        });
+            });
     }
 
-    public void turnFanOn(String userId, String fanId){
+
+
+
+
+
+
+
+            public void turnFanOn(String userId, String fanId){
         fanSpecificAPICall.turnFanOn(userId, fanId).enqueue(new Callback<Fan>() {
             @Override
             public void onResponse(Call<Fan> call, Response<Fan> response) {
@@ -88,6 +110,7 @@ public class FanRequests {
             }
         });
     }
-
-
 }
+
+
+

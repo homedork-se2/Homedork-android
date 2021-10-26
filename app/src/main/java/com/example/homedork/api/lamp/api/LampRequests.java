@@ -61,13 +61,9 @@ public class LampRequests {
                     DashboardService dashboardService = new DashboardService();
 
                     for (int i = 0; i <lamp.size(); i++) {
-                        dashboardService.addDynamicRangeSlide(layout, imageView, context, i, userId, lamp.get(i));
+                        //dashboardService.addDynamicRangeSlide(layout,  context, i, userId, lamp.get(i));
+                        dashboardService.addDynamicSwitchButton(layout,  context, i, userId, lamp.get(i));
                     }
-
-
-
-
-
 
                 }else {
                     System.out.println("Body is null on line 41: (LampRequests.java)");

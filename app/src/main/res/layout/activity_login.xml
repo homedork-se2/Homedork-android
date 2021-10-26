@@ -21,8 +21,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="390dp"
-        android:layout_height="145dp"
+        android:layout_width="387dp"
+        android:layout_height="109dp"
         android:layout_marginTop="8dp"
         android:fontFamily="serif"
         android:text="HomeDork the next generation of Smart Houses."
@@ -103,8 +103,8 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:background="@drawable/round_corner_toggle_email"
-            android:hint=" Enter email"
             android:drawableLeft="@drawable/ic_user"
+            android:hint=" Enter email"
             android:paddingLeft="10dp"
             android:textColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
