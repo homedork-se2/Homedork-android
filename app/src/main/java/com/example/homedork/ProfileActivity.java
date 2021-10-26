@@ -7,6 +7,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.homedork.api.fan.api.FanRequests;
 import com.example.homedork.api.lamp.api.LampRequests;
 import com.example.homedork.api.model.device.Lamp;
 import com.example.homedork.dashboard.DashboardService;
@@ -22,6 +23,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard);
 
+
         populateDeviceScroller();
 
     }
@@ -30,7 +32,10 @@ public class ProfileActivity extends AppCompatActivity {
         DashboardService dashboardService = new DashboardService();
         String uid = FirebaseAuth.getInstance().getUid();
         LampRequests lampRequests = new LampRequests();
+        FanRequests fanRequests = new FanRequests();
         lampRequests.getUserLamps(this.findViewById(R.id.c), new ImageView(this), this,  "123");
+        fanRequests.getFans(this.findViewById(R.id.c), new ImageView(this), this,  "123");
+
 
 
 /*
