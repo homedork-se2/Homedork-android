@@ -6,7 +6,6 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,9 +13,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.homedork.ProfileActivity;
+import com.example.homedork.Dashbord2;
+import com.example.homedork.MainActivity;
 import com.example.homedork.R;
 import com.example.homedork.api.lamp.api.LampRequests;
+import com.example.homedork.test;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -105,7 +106,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                     if (user.isEmailVerified()) {
-                        startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
+                        startActivity(new Intent(LoginActivity.this, Dashbord2.class));
                     } else {
                         // user.sendEmailVerification();
                         Toast.makeText(LoginActivity.this, "Please verify your email first before logging in", Toast.LENGTH_LONG).show();

@@ -1,22 +1,30 @@
 package com.example.homedork;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import com.example.homedork.api.fan.api.FanRequests;
 import com.example.homedork.api.lamp.api.LampRequests;
 import com.example.homedork.api.model.device.Lamp;
 import com.example.homedork.dashboard.DashboardService;
+import com.example.homedork.signup.LoginActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
-public class ProfileActivity extends AppCompatActivity {
-    private Button logout;
+public class Dashbord2 extends AppCompatActivity  {
+    private Button logout, btnn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +33,15 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         populateDeviceScroller();
+
+        btnn = findViewById(R.id.btnn);
+        btnn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashbord2.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
