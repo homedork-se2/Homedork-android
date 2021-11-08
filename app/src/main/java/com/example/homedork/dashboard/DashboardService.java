@@ -64,7 +64,6 @@ public class DashboardService {
         textView.setTextSize(17);
 
 
-
         l.setBackground(context.getDrawable(R.drawable.dynamic_design));
         l.getLayoutParams().height = 400;
         params1.leftMargin = 25;
@@ -153,22 +152,6 @@ public class DashboardService {
         params1.leftMargin = 25;
         // params.addRule(RelativeLayout.ALIGN_RIGHT);
 
-     /*   if (context.equals(true)){
-
-            rangeSlider.setVisibility(View.VISIBLE);
-
-            params.topMargin = 30;
-            params.setMarginEnd(190);
-            params.rightMargin = 20;
-            params.leftMargin = 160;
-            rangeSlider.setLayoutParams(params);
-            params.width = 550;
-        }else {
-            rangeSlider.setVisibility(View.GONE);
-        }
-
-      */
-
 
         params.addRule(RelativeLayout.ALIGN_PARENT_TOP);
         params.addRule(RelativeLayout.ALIGN_PARENT_END);
@@ -230,11 +213,11 @@ public class DashboardService {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 LampRequests lampRequests = new LampRequests();
                 if (isChecked) {
-                    lampRequests.turnLampOn("123", buttonId);
+                    lampRequests.turnLampOn(FirebaseAuth.getInstance().getUid(), buttonId);
                 }
 
                 if (!isChecked) {
-                    lampRequests.turnLampOff("123", buttonId);
+                    lampRequests.turnLampOff(FirebaseAuth.getInstance().getUid(), buttonId);
                 }
             }
         });

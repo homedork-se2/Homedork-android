@@ -20,6 +20,7 @@ import com.example.homedork.dashboard.DashboardService;
 import com.example.homedork.signup.LoginActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
@@ -47,11 +48,12 @@ public class Dashbord2 extends AppCompatActivity  {
 
     public void populateDeviceScroller(){
         DashboardService dashboardService = new DashboardService();
-        String uid = FirebaseAuth.getInstance().getUid();
+        String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
+        //String uid = FirebaseAuth.getInstance().getUid();
         LampRequests lampRequests = new LampRequests();
-        FanRequests fanRequests = new FanRequests();
-        lampRequests.getUserLamps(this.findViewById(R.id.c), new ImageView(this), this,  "123");
-        fanRequests.getFans(this.findViewById(R.id.c), new ImageView(this), this,  "123");
+       // FanRequests fanRequests = new FanRequests();
+        lampRequests.getUserLamps(this.findViewById(R.id.c), new ImageView(this), this, uid);
+      //  fanRequests.getFans(this.findViewById(R.id.c), new ImageView(this), this, uid);
 
 
 
