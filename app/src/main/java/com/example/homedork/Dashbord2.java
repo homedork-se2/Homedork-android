@@ -8,23 +8,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
+import com.example.homedork.Calendar.CalendarMain;
 import com.example.homedork.api.fan.api.FanRequests;
 import com.example.homedork.api.lamp.api.LampRequests;
-import com.example.homedork.api.model.device.Lamp;
 import com.example.homedork.dashboard.DashboardService;
-import com.example.homedork.signup.LoginActivity;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.List;
-
 public class Dashbord2 extends AppCompatActivity  {
-    private Button logout, btnn;
+    private Button logout, btn, cal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +26,27 @@ public class Dashbord2 extends AppCompatActivity  {
 
         populateDeviceScroller();
 
-        btnn = findViewById(R.id.btnn);
-        btnn.setOnClickListener(new View.OnClickListener() {
+        btn = findViewById(R.id.btnn);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Dashbord2.this, LoginActivity.class);
+                Intent intent = new Intent(Dashbord2.this, Game.class);
+                startActivity(intent);
+            }
+        });
+
+
+        cal = findViewById(R.id.calendar);
+        cal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashbord2.this, CalendarMain.class);
                 startActivity(intent);
             }
         });
 
     }
+
 
     public void populateDeviceScroller(){
         DashboardService dashboardService = new DashboardService();

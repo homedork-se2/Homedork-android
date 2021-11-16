@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Homedork"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Game"
+            android:exported="false" />
+        <activity
+            android:name=".Calendar.CalendarMain"
+            android:exported="false" />
+        <activity
+            android:name=".Calendar.WeekViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Calendar.DailyCalendarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Calendar.EventEditActivity"
+            android:exported="false" />
+        <activity
             android:name=".test"
             android:exported="true" />
         <activity
