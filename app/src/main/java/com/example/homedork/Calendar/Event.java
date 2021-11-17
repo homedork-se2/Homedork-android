@@ -8,6 +8,9 @@ public class Event
 {
     public static ArrayList<Event> eventsList = new ArrayList<>();
 
+    public Event(String eventName, String eventDate, String eventTime) {
+    }
+
     public static ArrayList<Event> eventsForDate(LocalDate date)
     {
         ArrayList<Event> events = new ArrayList<>();
