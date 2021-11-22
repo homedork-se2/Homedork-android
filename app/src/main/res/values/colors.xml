@@ -11,4 +11,9 @@
     <color name="lightGray">#EEE</color>
     <color name="gray">#888</color>
     <color name="blue">#0000FF</color>
+    <color name="bright_orange">#FF8000</color>
+    <color name="dark_orange">#B85C00</color>
+    <color name="dark_grey">#171717</color>
+
+    <color name="purple">#B300FF</color>
 </resources>

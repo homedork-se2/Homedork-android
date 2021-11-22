@@ -10,13 +10,14 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.homedork.Calendar.CalendarMain;
+import com.example.homedork.Settings.MainVibrate;
 import com.example.homedork.api.fan.api.FanRequests;
 import com.example.homedork.api.lamp.api.LampRequests;
 import com.example.homedork.dashboard.DashboardService;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Dashbord2 extends AppCompatActivity  {
-    private Button logout, btn, cal;
+    private Button logout, btn, cal, settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,15 @@ public class Dashbord2 extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Dashbord2.this, Game.class);
+                startActivity(intent);
+            }
+        });
+
+        settings = findViewById(R.id.settings);
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( Dashbord2.this, MainVibrate.class);
                 startActivity(intent);
             }
         });
