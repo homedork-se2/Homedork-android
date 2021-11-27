@@ -1,13 +1,8 @@
 package com.example.homedork.dashboard;
 
-import static com.example.homedork.R.animator.mtrl_btn_state_list_anim;
-import static com.example.homedork.R.animator.nav_default_exit_anim;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -23,7 +18,6 @@ import com.example.homedork.api.model.device.Fan;
 import com.example.homedork.api.model.device.Lamp;
 import com.google.android.material.slider.RangeSlider;
 import com.google.android.material.switchmaterial.SwitchMaterial;
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -65,7 +59,7 @@ public class DashboardService {
 
 
 
-        l.setBackground(context.getDrawable(R.drawable.dynamic_design));
+        l.setBackground(context.getDrawable(R.drawable.lamp_back));
         l.getLayoutParams().height = 400;
         params1.leftMargin = 25;
 
@@ -83,7 +77,7 @@ public class DashboardService {
         params.width = 550;
         imageView.setImageResource(R.drawable.lamp);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-        lp.setMargins(1, 35, lp.leftMargin, lp.bottomMargin);
+        lp.setMargins(20, 35, lp.leftMargin, lp.bottomMargin);
         imageView.setLayoutParams(lp);
         imageView.getLayoutParams().height = 120;
         imageView.getLayoutParams().width = 170;
@@ -149,7 +143,7 @@ public class DashboardService {
         RelativeLayout.LayoutParams params1 = (RelativeLayout.LayoutParams) l.getLayoutParams();
         params1.height = 400;
         params1.width = 1000;
-        l.setBackground(context.getDrawable(R.drawable.dynamic_design));
+        l.setBackground(context.getDrawable(R.drawable.fan_back));
         params1.leftMargin = 25;
         // params.addRule(RelativeLayout.ALIGN_RIGHT);
 
@@ -194,7 +188,7 @@ public class DashboardService {
 
         imageView.setImageResource(R.drawable.ac);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-        lp.setMargins(35, 35, lp.leftMargin, lp.bottomMargin);
+        lp.setMargins(55, 60, lp.leftMargin, lp.bottomMargin);
         imageView.setLayoutParams(lp);
         imageView.getLayoutParams().height = 100;
         imageView.getLayoutParams().width = 100;
