@@ -1,6 +1,7 @@
 package com.example.homedork.Calendar;
 
 import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,13 +10,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 import com.example.homedork.R;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
-
+@RequiresApi(api = Build.VERSION_CODES.O)
 public class HourAdapter extends ArrayAdapter<HourEvent>
 {
     public HourAdapter(@NonNull Context context, List<HourEvent> hourEvents)

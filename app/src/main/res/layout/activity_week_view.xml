@@ -30,7 +30,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/back"
+            android:text="back"
             android:textColor="@color/blue"
             android:backgroundTint="#25FAFAFA"
             android:textStyle="bold"
@@ -51,7 +51,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/forward"
+            android:text="next"
             android:textColor="@color/blue"
             android:backgroundTint="#25FAFAFA"
             android:textStyle="bold"
@@ -72,7 +72,8 @@
             android:text="SUN"
             android:textColor="@color/gray"
             android:textAlignment="center"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:gravity="center_horizontal" />
 
         <TextView
             android:layout_width="0dp"
@@ -81,7 +82,8 @@
             android:text="MON"
             android:textColor="@color/gray"
             android:textAlignment="center"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:gravity="center_horizontal" />
 
         <TextView
             android:layout_width="0dp"
@@ -90,7 +92,8 @@
             android:text="TUE"
             android:textColor="@color/gray"
             android:textAlignment="center"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:gravity="center_horizontal" />
 
         <TextView
             android:layout_width="0dp"
@@ -99,7 +102,8 @@
             android:text="WED"
             android:textColor="@color/gray"
             android:textAlignment="center"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:gravity="center_horizontal" />
 
         <TextView
             android:layout_width="0dp"
@@ -108,7 +112,8 @@
             android:text="THUR"
             android:textColor="@color/gray"
             android:textAlignment="center"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:gravity="center_horizontal" />
 
         <TextView
             android:layout_width="0dp"
@@ -117,7 +122,8 @@
             android:text="FRI"
             android:textColor="@color/gray"
             android:textAlignment="center"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:gravity="center_horizontal" />
 
         <TextView
             android:layout_width="0dp"
@@ -126,7 +132,8 @@
             android:text="SAT"
             android:textColor="@color/gray"
             android:textAlignment="center"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:gravity="center_horizontal" />
 
 
     </LinearLayout>

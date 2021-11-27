@@ -1,11 +1,16 @@
 package com.example.homedork.Calendar;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-public class Event
-{
+@RequiresApi(api = Build.VERSION_CODES.O)
+public class Event {
+
     public static ArrayList<Event> eventsList = new ArrayList<>();
 
     public Event(String eventName, String eventDate, String eventTime) {

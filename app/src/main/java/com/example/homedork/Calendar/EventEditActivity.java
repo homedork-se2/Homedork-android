@@ -1,6 +1,7 @@
 package com.example.homedork.Calendar;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.homedork.R;
@@ -18,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.time.LocalTime;
-
+@RequiresApi(api = Build.VERSION_CODES.O)
 public class EventEditActivity extends AppCompatActivity
 {
     private EditText eventNameET,timee;

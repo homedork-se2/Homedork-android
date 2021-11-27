@@ -5,10 +5,12 @@ import static com.example.homedork.Calendar.CalendarUtils.daysInMonthArray;
 import static com.example.homedork.Calendar.CalendarUtils.monthYearFromDate;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,7 +20,7 @@ import com.example.homedork.R;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-
+@RequiresApi(api = Build.VERSION_CODES.O)
 public class CalendarMain extends AppCompatActivity implements CalendarAdapter.OnItemListener {
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;

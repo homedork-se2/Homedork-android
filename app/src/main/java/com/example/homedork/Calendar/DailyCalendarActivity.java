@@ -3,11 +3,13 @@ package com.example.homedork.Calendar;
 import static com.example.homedork.Calendar.CalendarUtils.selectedDate;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.homedork.R;
@@ -17,8 +19,9 @@ import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class DailyCalendarActivity extends AppCompatActivity
-{
+@RequiresApi(api = Build.VERSION_CODES.O)
+public class DailyCalendarActivity extends AppCompatActivity {
+
 
     private TextView monthDayText;
     private TextView dayOfWeekTV;
