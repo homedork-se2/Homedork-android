@@ -8,16 +8,6 @@
     android:orientation="vertical"
     tools:context=".Calendar.WeekViewActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Daily"
-        android:textColor="@color/blue"
-        android:backgroundTint="#25FAFAFA"
-        android:textStyle="bold"
-        android:onClick="dailyAction"
-        android:textSize="20sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,7 +35,8 @@
             android:text="Feb 2021"
             android:textSize="20sp"
             android:textAlignment="center"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:gravity="center_horizontal" />
 
         <Button
             android:layout_width="0dp"
