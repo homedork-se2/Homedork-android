@@ -17,7 +17,7 @@ import com.example.homedork.dashboard.DashboardService;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Dashbord2 extends AppCompatActivity  {
-    private Button logout, btn, cal, settings;
+    private Button logout, btn, cal, settings, statusCommandBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +54,16 @@ public class Dashbord2 extends AppCompatActivity  {
                 startActivity(intent);
             }
         });
+
+        statusCommandBtn = findViewById(R.id.statusCommandsButton);
+        statusCommandBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashbord2.this, MoodsActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 

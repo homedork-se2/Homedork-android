@@ -24,14 +24,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.616"
-            tools:ignore="SpeakableTextPresentCheck">
+            tools:ignore="SpeakableTextPresentCheck"
+            android:fillViewport="true">
 
             <LinearLayout
                 android:id="@+id/c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/newback"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
 
             </LinearLayout>
@@ -67,12 +69,19 @@
             android:id="@+id/settings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:text="Setting"
             app:layout_constraintBottom_toTopOf="@+id/scrollView2"
             app:layout_constraintEnd_toStartOf="@+id/btnn"
             app:layout_constraintStart_toEndOf="@+id/calendar"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/statusCommandsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Personalized status command"
+            app:layout_constraintTop_toBottomOf="@id/settings"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
