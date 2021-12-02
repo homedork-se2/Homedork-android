@@ -22,7 +22,7 @@
     <!-- HIGH CONTRAST THEME -->
     <style name="HighContrast" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimary">#DC9707</item>
         <item name="colorPrimaryVariant">@color/dark_grey</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
@@ -31,7 +31,7 @@
         <item name="colorOnSecondary">@color/white</item>
         <!-- Custom colors -->
         <item name="android:textColor">@color/bright_orange</item>
-        <item name="android:background">@color/black</item>
+        <item name="android:background">#353434</item>
         <!-- Text sizes -->
         <item name="android:textAppearance">@style/BigTextSize</item>
         <item name="android:textAppearanceLarge">@style/BigTextSize.Large</item>

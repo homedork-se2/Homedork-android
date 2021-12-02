@@ -17,7 +17,7 @@
             android:id="@+id/scrollView2"
             android:layout_width="390dp"
             android:layout_height="645dp"
-            android:background="@color/white"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.457"
@@ -30,7 +30,7 @@
                 android:id="@+id/c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/newback"
+
                 android:orientation="vertical">
 
 

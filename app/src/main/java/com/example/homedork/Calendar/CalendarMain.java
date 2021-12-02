@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,8 +30,13 @@ public class CalendarMain extends AppCompatActivity implements CalendarAdapter.O
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
+
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.HighContrast); // When dark mode is enabled, we use the contrast theme
+        } else {
+            setTheme(R.style.Theme_Homedork); // Default app theme
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calandar);
         initWidgets();
@@ -39,14 +45,13 @@ public class CalendarMain extends AppCompatActivity implements CalendarAdapter.O
 
     }
 
-    private void initWidgets()
-    {
+    private void initWidgets() {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         monthYearText = findViewById(R.id.monthYearTV);
     }
 
-    private void setMonthView()
-    {
+    private void setMonthView() {
+
         monthYearText.setText(monthYearFromDate(CalendarUtils.selectedDate));
         ArrayList<LocalDate> daysInMonth = daysInMonthArray();
 
@@ -56,8 +61,12 @@ public class CalendarMain extends AppCompatActivity implements CalendarAdapter.O
         calendarRecyclerView.setAdapter(calendarAdapter);
     }
 
-    public void previousMonthAction(View view)
-    {
+    public void previousMonthAction(View view) {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.HighContrast); // When dark mode is enabled, we use the contrast theme
+        } else {
+            setTheme(R.style.Theme_Homedork); // Default app theme
+        }
         CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusMonths(1);
         setMonthView();
     }
@@ -69,8 +78,7 @@ public class CalendarMain extends AppCompatActivity implements CalendarAdapter.O
     }
 
     @Override
-    public void onItemClick(int position, LocalDate date)
-    {
+    public void onItemClick(int position, LocalDate date) {
         if(date != null)
         {
             CalendarUtils.selectedDate = date;
@@ -78,8 +86,7 @@ public class CalendarMain extends AppCompatActivity implements CalendarAdapter.O
         }
     }
 
-    public void weeklyAction(View view)
-    {
+    public void weeklyAction(View view) {
         startActivity(new Intent(this, WeekViewActivity.class));
     }
 
