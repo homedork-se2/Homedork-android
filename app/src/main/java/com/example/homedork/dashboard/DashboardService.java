@@ -2,6 +2,7 @@ package com.example.homedork.dashboard;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -10,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 
 import com.example.homedork.R;
 import com.example.homedork.api.fan.api.FanRequests;
@@ -21,6 +23,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.List;
 
+@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class DashboardService {
     private LampRequests lampRequests = new LampRequests();
     private FanRequests fanRequests = new FanRequests();
