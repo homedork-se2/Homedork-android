@@ -1,5 +1,6 @@
 package com.example.homedork;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -7,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class Game extends AppCompatActivity implements View.OnClickListener {
 
@@ -22,8 +24,14 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.HighContrast); // When dark mode is enabled, we use the contrast theme
+        } else {
+            setTheme(R.drawable.glass); // Default app theme
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 

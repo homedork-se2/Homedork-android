@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.homedork.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,6 +31,11 @@ public class EventEditActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.HighContrast); // When dark mode is enabled, we use the contrast theme
+        } else {
+            setTheme(R.style.Theme_Homedork); // Default app theme
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_edit);
         initWidgets();
