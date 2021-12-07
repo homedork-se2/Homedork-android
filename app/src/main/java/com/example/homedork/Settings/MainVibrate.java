@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import com.example.homedork.Game;
 import com.example.homedork.R;
 
 import java.util.ArrayList;
@@ -74,6 +75,17 @@ public class MainVibrate extends AppCompatActivity {
                     ArrayList<String> text = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     tvText.setText(text.get(0));
                 }
+                if (tvText.getText().toString().equals("go to settings")) {
+                    Intent intent = new Intent(this, SettingsActivity.class);
+                    startActivity(intent);
+                } if (tvText.getText().toString().equals("go to set")){
+                        Intent intent = new Intent(this, SettingsActivity.class);
+                        startActivity(intent);
+                    }
+                if (tvText.getText().toString().equals("I want to play a game")) {
+                Intent intent = new Intent(this, Game.class);
+                startActivity(intent);
+            }
                 break;
         }
     }

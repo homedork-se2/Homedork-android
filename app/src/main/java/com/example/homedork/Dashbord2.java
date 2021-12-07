@@ -3,11 +3,13 @@ package com.example.homedork;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
@@ -18,6 +20,7 @@ import com.example.homedork.api.lamp.api.LampRequests;
 import com.example.homedork.dashboard.DashboardService;
 import com.google.firebase.auth.FirebaseAuth;
 
+@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class Dashbord2 extends AppCompatActivity  {
     private Button logout, btn, cal, settings;
 
