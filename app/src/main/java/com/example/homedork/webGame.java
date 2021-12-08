@@ -13,7 +13,7 @@ public class webGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_game);
         webView = (WebView) findViewById(R.id.web);
-        webView.loadUrl(" http://5590-90-231-106-245.ngrok.io/gameMobile.jsp");
+        webView.loadUrl("http://b677-90-231-106-245.ngrok.io/gameMobile.jsp");
 
     }
 }
