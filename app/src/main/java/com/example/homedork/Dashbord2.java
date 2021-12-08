@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class Dashbord2 extends AppCompatActivity  {
-    private Button logout, btn, cal, settings;
+    private Button logout, btn, cal, settings,disc;
 
     @SuppressLint("ResourceType")
     @Override
@@ -43,6 +43,14 @@ public class Dashbord2 extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Dashbord2.this, Game.class);
+                startActivity(intent);
+            }
+        });
+        disc = findViewById(R.id.disco);
+        disc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashbord2.this, DiscoMoodActivity.class);
                 startActivity(intent);
             }
         });

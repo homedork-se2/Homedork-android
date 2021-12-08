@@ -21,6 +21,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.time.LocalTime;
+import java.util.UUID;
+
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class EventEditActivity extends AppCompatActivity
 {
@@ -73,11 +75,13 @@ public class EventEditActivity extends AppCompatActivity
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid()));
         System.out.println(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-        System.out.println("HANI HANI HANI HANI HANI HANI");
 
+        UUID uuid = UUID.randomUUID();
+
+        System.out.println("new event id here"+uuid);
 
         FirebaseDatabase.getInstance().getReference("Events")
-                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(String.valueOf(uuid))
                 .setValue(event).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
