@@ -9,27 +9,16 @@
     tools:context=".Settings.MainVibrate">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:gravity="center|center_vertical"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="457dp" />
-
-    <Button
         android:id="@+id/settingsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="544dp"
         android:gravity="center|center_vertical"
         android:text="Settings"
         app:backgroundTint="#009688"
-        app:layout_constraintBottom_toTopOf="@+id/tvText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,14 +43,13 @@
         android:layout_width="103dp"
         android:layout_height="99dp"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="72dp"
         android:background="#00000000"
         android:filterTouchesWhenObscured="false"
         android:src="@drawable/mic"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="703dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"

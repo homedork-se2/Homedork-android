@@ -42,7 +42,6 @@ public class MainVibrate extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vibrate);
 
-        Button button = findViewById(R.id.button);
         Button settingsButton = findViewById(R.id.settingsButton);
 
         tvText = findViewById(R.id.tvText);
