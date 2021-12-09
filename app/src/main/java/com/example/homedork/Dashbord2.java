@@ -4,10 +4,12 @@ package com.example.homedork;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
@@ -16,9 +18,10 @@ import com.example.homedork.Settings.MainVibrate;
 import com.example.homedork.api.fan.api.FanRequests;
 import com.example.homedork.api.lamp.api.LampRequests;
 import com.example.homedork.dashboard.DashboardService;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Dashbord2 extends AppCompatActivity  {
+public class Dashbord2 extends AppCompatActivity {
     private Button logout, btn, cal, settings;
 
     @SuppressLint("ResourceType")
@@ -48,7 +51,7 @@ public class Dashbord2 extends AppCompatActivity  {
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( Dashbord2.this, MainVibrate.class);
+                Intent intent = new Intent(Dashbord2.this, MainVibrate.class);
                 startActivity(intent);
             }
         });
@@ -62,17 +65,43 @@ public class Dashbord2 extends AppCompatActivity  {
                 startActivity(intent);
             }
         });
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_dashboard);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_game:
+                        startActivity(new Intent(getApplicationContext(), Game.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.navigation_dashboard:
+
+                        return true;
+                    case R.id.navigation_calendar:
+                        startActivity(new Intent(getApplicationContext(), CalendarMain.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.navigation_settings:
+                        startActivity(new Intent(getApplicationContext(), MainVibrate.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
 
     }
 
 
-    public void populateDeviceScroller(){
+    public void populateDeviceScroller() {
         DashboardService dashboardService = new DashboardService();
         String uid = FirebaseAuth.getInstance().getUid();
         LampRequests lampRequests = new LampRequests();
         FanRequests fanRequests = new FanRequests();
-        lampRequests.getUserLamps(this.findViewById(R.id.c), new ImageView(this), this,  "123");
-        fanRequests.getFans(this.findViewById(R.id.c), new ImageView(this), this,  "123");
+        lampRequests.getUserLamps(this.findViewById(R.id.c), new ImageView(this), this, "123");
+        fanRequests.getFans(this.findViewById(R.id.c), new ImageView(this), this, "123");
 
 
 

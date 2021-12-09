@@ -72,7 +72,9 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
                 switch (item.getItemId()){
                     case R.id.navigation_game:
                         return true;
-
+                    case R.id.navigation_dashboard:
+                        startActivity(new Intent(getApplicationContext(), Dashbord2.class));
+                        overridePendingTransition(0,0);
                     case R.id.navigation_calendar:
                         startActivity(new Intent(getApplicationContext(), CalendarMain.class));
                         overridePendingTransition(0,0);
