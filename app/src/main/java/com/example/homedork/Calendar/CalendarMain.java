@@ -48,27 +48,26 @@ public class CalendarMain extends AppCompatActivity implements CalendarAdapter.O
         CalendarUtils.selectedDate = LocalDate.now();
         setMonthView();
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
-        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+        bottomNavigationView.setSelectedItemId(R.id.navigation_calendar);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onNavigationItemReselected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.navigation_dashboard:
+                    case R.id.navigation_game:
                         startActivity(new Intent(getApplicationContext(), Game.class));
                         overridePendingTransition(0,0);
+                        return true;
 
-                        case R.id.navigation_home:
-
-                    case R.id.navigation_notifications:
+                    case R.id.navigation_calendar:
+                       return true;
+                    case R.id.navigation_settings:
                         startActivity(new Intent(getApplicationContext(), MainVibrate.class));
                         overridePendingTransition(0,0);
-
-
+                        return true;
                 }
-
+                return false;
             }
         });
-
 
     }
 

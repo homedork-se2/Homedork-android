@@ -71,23 +71,24 @@ public class MainVibrate extends AppCompatActivity {
         });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_notifications);
-        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+        bottomNavigationView.setSelectedItemId(R.id.navigation_settings);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onNavigationItemReselected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.navigation_dashboard:
+                    case R.id.navigation_game:
                         startActivity(new Intent(getApplicationContext(), Game.class));
                         overridePendingTransition(0,0);
-                    case R.id.navigation_home:
+                        return true;
+
+                    case R.id.navigation_calendar:
                         startActivity(new Intent(getApplicationContext(), CalendarMain.class));
                         overridePendingTransition(0,0);
-                    case R.id.navigation_notifications:
-
-
-
+                        return true;
+                    case R.id.navigation_settings:
+                        return true;
                 }
-
+                return false;
             }
         });
 
