@@ -1,14 +1,21 @@
 package com.example.homedork;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+
+import com.example.homedork.Calendar.CalendarMain;
+import com.example.homedork.Settings.MainVibrate;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Game extends AppCompatActivity implements View.OnClickListener {
 
@@ -54,6 +61,30 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
                 resetGame();
             }
         });
+
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_dashboard);
+        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.navigation_dashboard:
+
+                    case R.id.navigation_home:
+                        startActivity(new Intent(getApplicationContext(), CalendarMain.class));
+                        overridePendingTransition(0,0);
+                    case R.id.navigation_notifications:
+                        startActivity(new Intent(getApplicationContext(), MainVibrate.class));
+                        overridePendingTransition(0,0);
+
+
+
+                }
+
+            }
+        });
+
     }
 
     @Override

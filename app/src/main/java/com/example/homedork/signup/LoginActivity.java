@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.homedork.Calendar.CalendarMain;
 import com.example.homedork.Dashbord2;
 import com.example.homedork.MainActivity;
 import com.example.homedork.R;
@@ -106,7 +107,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                     if (user.isEmailVerified()) {
-                        startActivity(new Intent(LoginActivity.this, Dashbord2.class));
+                        startActivity(new Intent(LoginActivity.this, CalendarMain.class));
                     } else {
                         // user.sendEmailVerification();
                         Toast.makeText(LoginActivity.this, "Please verify your email first before logging in", Toast.LENGTH_LONG).show();

@@ -5,17 +5,22 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import com.example.homedork.Calendar.CalendarMain;
+import com.example.homedork.Game;
 import com.example.homedork.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
@@ -58,11 +63,34 @@ public class MainVibrate extends AppCompatActivity {
         });
 
 
+
         settingsButton.setOnClickListener(v -> {
             // opening a new intent to open settings activity.
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
         });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_notifications);
+        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.navigation_dashboard:
+                        startActivity(new Intent(getApplicationContext(), Game.class));
+                        overridePendingTransition(0,0);
+                    case R.id.navigation_home:
+                        startActivity(new Intent(getApplicationContext(), CalendarMain.class));
+                        overridePendingTransition(0,0);
+                    case R.id.navigation_notifications:
+
+
+
+                }
+
+            }
+        });
+
 
     }
     @Override
