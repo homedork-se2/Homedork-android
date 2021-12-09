@@ -8,13 +8,13 @@
     <activity
         android:id="@+id/navigation_calendar"
         android:name="com.example.homedork.Calendar.CalendarMain"
-        android:label="@string/title_home"
+        android:label="@string/title_calendar"
         tools:layout="@layout/activity_calandar" />
 
     <activity
         android:id="@+id/navigation_dashboard"
         android:name="com.example.homedork.Dashbord2"
-        android:label="Devices"
+        android:label="@string/title_devices"
         tools:layout="@layout/dashboard"
         />
 
@@ -28,7 +28,7 @@
     <fragment
         android:id="@+id/navigation_settings"
         android:name="com.example.homedork.Settings.SettingsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_settings"
         tools:layout="@layout/activity_vibrate" />
 
 </navigation>

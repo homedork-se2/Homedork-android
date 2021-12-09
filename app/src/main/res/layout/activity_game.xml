@@ -133,7 +133,7 @@
         <Button
             android:id="@+id/button_21"
             android:layout_width="0dp"
-            android:layout_height="217dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:freezesText="true"
 
@@ -154,9 +154,8 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5">
-
+        android:layout_height="wrap_content"
+        >
 
 
         <com.google.android.material.bottomnavigation.BottomNavigationView

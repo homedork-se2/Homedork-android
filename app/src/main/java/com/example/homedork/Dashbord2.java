@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.homedork.Calendar.CalendarMain;
 import com.example.homedork.Settings.MainVibrate;
+import com.example.homedork.Settings.SettingsActivity;
 import com.example.homedork.api.fan.api.FanRequests;
 import com.example.homedork.api.lamp.api.LampRequests;
 import com.example.homedork.dashboard.DashboardService;
@@ -22,7 +23,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Dashbord2 extends AppCompatActivity {
-    private Button logout, btn, cal, settings;
+    private Button logout;
 
     @SuppressLint("ResourceType")
     @Override
@@ -38,33 +39,7 @@ public class Dashbord2 extends AppCompatActivity {
 
         populateDeviceScroller();
 
-        btn = findViewById(R.id.btnn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Dashbord2.this, Game.class);
-                startActivity(intent);
-            }
-        });
 
-        settings = findViewById(R.id.settings);
-        settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Dashbord2.this, MainVibrate.class);
-                startActivity(intent);
-            }
-        });
-
-
-        cal = findViewById(R.id.calendar);
-        cal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Dashbord2.this, CalendarMain.class);
-                startActivity(intent);
-            }
-        });
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
         bottomNavigationView.setSelectedItemId(R.id.navigation_dashboard);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

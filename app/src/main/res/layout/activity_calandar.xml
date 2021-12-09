@@ -146,8 +146,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/calendarRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="480dp" />
-
+        android:layout_height="507dp" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
