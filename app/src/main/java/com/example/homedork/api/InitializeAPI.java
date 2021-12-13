@@ -8,6 +8,8 @@ public class InitializeAPI {
     private static final String BASE_URL = "http://8c14-83-248-0-117.ngrok.io/";
     private static final String TEST_URL = " http://1f9e-90-231-106-245.ngrok.io";
 
+
+
     public static Retrofit getRetrofitInstance(){
         System.out.println();
         if (retrofit == null){
