@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import com.example.homedork.Calendar.CalendarMain;
 import com.example.homedork.Dashbord2;
 
+import com.example.homedork.Fun.FunMenu;
 import com.example.homedork.Fun.Game;
 import com.example.homedork.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -79,7 +80,7 @@ public class MainVibrate extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.navigation_game:
-                        startActivity(new Intent(getApplicationContext(), Game.class));
+                        startActivity(new Intent(getApplicationContext(), FunMenu.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_dashboard:

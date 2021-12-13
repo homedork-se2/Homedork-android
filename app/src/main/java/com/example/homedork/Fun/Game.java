@@ -65,30 +65,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         });
 
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_game);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.navigation_game:
-                        return true;
-                    case R.id.navigation_dashboard:
-                        startActivity(new Intent(getApplicationContext(), Dashbord2.class));
-                        overridePendingTransition(0,0);
-                    case R.id.navigation_calendar:
-                        startActivity(new Intent(getApplicationContext(), CalendarMain.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.navigation_settings:
-                        startActivity(new Intent(getApplicationContext(), MainVibrate.class));
-                        overridePendingTransition(0,0);
-                        return true;
-            }
-            return false;
-        }
-    });
     }
 
     @Override

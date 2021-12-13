@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.homedork.Dashbord2;
+import com.example.homedork.Fun.FunMenu;
 import com.example.homedork.Fun.Game;
 import com.example.homedork.R;
 import com.example.homedork.Settings.MainVibrate;
@@ -55,7 +56,7 @@ public class CalendarMain extends AppCompatActivity implements CalendarAdapter.O
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.navigation_game:
-                        startActivity(new Intent(getApplicationContext(), Game.class));
+                        startActivity(new Intent(getApplicationContext(), FunMenu.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_dashboard:
