@@ -10,7 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+
 import androidx.annotation.NonNull;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -26,9 +28,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+
 public class Dashbord2 extends AppCompatActivity {
     private Button logout;
     FloatingActionButton Personalized;
+
 
     @SuppressLint("ResourceType")
     @Override
@@ -43,6 +47,7 @@ public class Dashbord2 extends AppCompatActivity {
 
 
         populateDeviceScroller();
+
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);

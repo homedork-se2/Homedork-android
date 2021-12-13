@@ -15,10 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.homedork.Calendar.CalendarMain;
 import com.example.homedork.Dashbord2;
-import com.example.homedork.MainActivity;
 import com.example.homedork.R;
 import com.example.homedork.api.lamp.api.LampRequests;
-import com.example.homedork.test;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

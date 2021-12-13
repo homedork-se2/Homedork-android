@@ -91,11 +91,6 @@ public class CalendarMain extends AppCompatActivity implements CalendarAdapter.O
     }
 
     public void previousMonthAction(View view) {
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.HighContrast); // When dark mode is enabled, we use the contrast theme
-        } else {
-            setTheme(R.style.Theme_Homedork); // Default app theme
-        }
         CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusMonths(1);
         setMonthView();
     }
