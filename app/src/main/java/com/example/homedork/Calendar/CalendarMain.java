@@ -7,16 +7,22 @@ import static com.example.homedork.Calendar.CalendarUtils.monthYearFromDate;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.homedork.Dashbord2;
+import com.example.homedork.Game;
 import com.example.homedork.R;
+import com.example.homedork.Settings.MainVibrate;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -42,6 +48,29 @@ public class CalendarMain extends AppCompatActivity implements CalendarAdapter.O
         initWidgets();
         CalendarUtils.selectedDate = LocalDate.now();
         setMonthView();
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_calendar);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.navigation_game:
+                        startActivity(new Intent(getApplicationContext(), Game.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_dashboard:
+                        startActivity(new Intent(getApplicationContext(), Dashbord2.class));
+                        overridePendingTransition(0,0);
+                    case R.id.navigation_calendar:
+                       return true;
+                    case R.id.navigation_settings:
+                        startActivity(new Intent(getApplicationContext(), MainVibrate.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
     }
 

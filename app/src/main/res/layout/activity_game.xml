@@ -119,10 +119,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:backgroundTint="#612B5B85"
-
             android:freezesText="true"
-            android:textSize="60sp" />
+
+            android:textSize="60sp"
+            app:backgroundTint="#612B5B85" />
 
         <Button
             android:id="@+id/button_12"
@@ -156,10 +156,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:backgroundTint="#612B5B85"
-
             android:freezesText="true"
-            android:textSize="60sp" />
+
+            android:textSize="60sp"
+            app:backgroundTint="#612B5B85" />
 
         <Button
             android:id="@+id/button_22"
@@ -169,8 +169,26 @@
             app:backgroundTint="#612B5B85"
 
             android:freezesText="true"
-            android:textSize="60sp" />
+            android:textSize="60sp"  />
 
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:attr/windowBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/bottom_nav_menu" />
     </LinearLayout>
 
 </LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_calendar">
+
+    <activity
+        android:id="@+id/navigation_calendar"
+        android:name="com.example.homedork.Calendar.CalendarMain"
+        android:label="@string/title_calendar"
+        tools:layout="@layout/activity_calandar" />
+
+    <activity
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.homedork.Dashbord2"
+        android:label="@string/title_devices"
+        tools:layout="@layout/dashboard"
+        />
+
+
+    <activity
+        android:id="@+id/navigation_game"
+        android:name="com.example.homedork.Game"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/activity_game" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.homedork.Settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/activity_vibrate" />
+
+</navigation>

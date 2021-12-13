@@ -17,7 +17,15 @@
             android:name=".DiscoMoodActivity"
             android:exported="false" />
         <activity
-            android:name=".webGame"
+
+            android:name=".Mood.MoodsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Mood.EditMoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Mood.AddMoodActivity"
+
             android:exported="false" />
         <activity
             android:name=".Game"
