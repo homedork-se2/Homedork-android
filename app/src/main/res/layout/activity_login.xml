@@ -34,7 +34,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:gravity="center_horizontal" />
 
 
     <TextView
@@ -49,41 +50,44 @@
 
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout4" />
+        app:layout_constraintTop_toTopOf="@+id/textInputLayout4"
+        android:layout_marginRight="224dp" />
 
     <Button
         android:id="@+id/register"
-        android:layout_width="278dp"
-        android:layout_height="40dp"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/bright_orange"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:background="@drawable/custom_button"
         android:text="SignUp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signIn"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintVertical_bias="0.242" />
 
     <Button
         android:id="@+id/signIn"
-        android:layout_width="278dp"
-        android:layout_height="40dp"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         android:layout_marginTop="96dp"
-        android:background="@drawable/custom_button"
+        android:backgroundTint="@color/bright_orange"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="LogIn"
-        android:textStyle="bold"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16dp"
+        android:textStyle="bold"
+        app:cornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
@@ -136,7 +140,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:background="@drawable/round_corner_toggle_password"
             android:drawableStart="@drawable/ic_password"
             android:hint="password"
@@ -147,7 +151,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:drawableLeft="@drawable/ic_password" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

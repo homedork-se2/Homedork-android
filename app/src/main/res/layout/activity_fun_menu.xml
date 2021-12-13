@@ -4,12 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fun.webGame">
-
-    <WebView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/web"/>
-
+    tools:context=".Fun.FunMenu">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

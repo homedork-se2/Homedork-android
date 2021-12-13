@@ -1,4 +1,4 @@
-package com.example.homedork;
+package com.example.homedork.Fun;
 
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
@@ -16,6 +16,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.app.AppCompatDelegate;
+
+import com.example.homedork.R;
 
 
 public class DiscoMoodActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.homedork;
+package com.example.homedork.Fun;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.homedork.Calendar.CalendarMain;
+import com.example.homedork.Dashbord2;
+import com.example.homedork.R;
 import com.example.homedork.Settings.MainVibrate;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

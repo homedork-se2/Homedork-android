@@ -21,7 +21,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import com.example.homedork.Calendar.CalendarMain;
 import com.example.homedork.Dashbord2;
 
-import com.example.homedork.Game;
+import com.example.homedork.Fun.Game;
 import com.example.homedork.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

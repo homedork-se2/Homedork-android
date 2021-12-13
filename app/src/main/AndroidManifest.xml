@@ -14,10 +14,12 @@
         android:theme="@style/Theme.Homedork"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".DiscoMoodActivity"
+            android:name=".Fun.FunMenu"
             android:exported="false" />
         <activity
-
+            android:name=".Fun.DiscoMoodActivity"
+            android:exported="false" />
+        <activity
             android:name=".Mood.MoodsActivity"
             android:exported="false" />
         <activity
@@ -25,10 +27,9 @@
             android:exported="false" />
         <activity
             android:name=".Mood.AddMoodActivity"
-
             android:exported="false" />
         <activity
-            android:name=".Game"
+            android:name=".Fun.Game"
             android:exported="false" />
         <activity
             android:name=".Settings.MainVibrate"

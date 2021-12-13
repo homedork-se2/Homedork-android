@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.homedork.Dashbord2;
-import com.example.homedork.Game;
+import com.example.homedork.Fun.Game;
 import com.example.homedork.R;
 import com.example.homedork.Settings.MainVibrate;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
