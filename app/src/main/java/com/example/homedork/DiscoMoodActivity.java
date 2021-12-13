@@ -28,11 +28,6 @@ public class DiscoMoodActivity extends AppCompatActivity {
     private Button blink;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-       
-
 
     @SuppressLint("ResourceType")
     @Override
