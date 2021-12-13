@@ -3,6 +3,7 @@ package com.example.homedork;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,20 +11,24 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.homedork.Calendar.CalendarMain;
+import com.example.homedork.Mood.MoodsActivity;
 import com.example.homedork.Settings.MainVibrate;
-import com.example.homedork.Settings.SettingsActivity;
 import com.example.homedork.api.fan.api.FanRequests;
 import com.example.homedork.api.lamp.api.LampRequests;
 import com.example.homedork.dashboard.DashboardService;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
+@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class Dashbord2 extends AppCompatActivity {
     private Button logout;
+    FloatingActionButton Personalized;
 
     @SuppressLint("ResourceType")
     @Override
@@ -63,6 +68,16 @@ public class Dashbord2 extends AppCompatActivity {
                         return true;
                 }
                 return false;
+            }
+        });
+
+
+        Personalized = findViewById(R.id.Personalized);
+        Personalized.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashbord2.this, MoodsActivity.class);
+                startActivity(intent);
             }
         });
 
