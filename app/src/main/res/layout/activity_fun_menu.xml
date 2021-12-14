@@ -9,30 +9,28 @@
 
     <ImageButton
         android:id="@+id/tictac"
-        android:layout_width="116dp"
-        android:layout_height="99dp"
+        android:layout_width="79dp"
+        android:layout_height="86dp"
         android:background="@drawable/tictactoe"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintHorizontal_bias="0.226"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.492" />
 
     <ImageButton
         android:id="@+id/disco"
-        android:layout_width="116dp"
-        android:layout_height="99dp"
+        android:layout_width="95dp"
+        android:layout_height="77dp"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="316dp"
-        android:background="@drawable/disco"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        android:background="@drawable/discoball"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="@+id/tictac"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/nav_viewside"
