@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
@@ -16,6 +15,7 @@ import com.example.homedork.Calendar.CalendarMain;
 import com.example.homedork.Dashbord2;
 import com.example.homedork.R;
 import com.example.homedork.Settings.MainVibrate;
+import com.example.homedork.voice_command;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class FunMenu extends AppCompatActivity {
@@ -59,9 +59,14 @@ public class FunMenu extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), FunMenu.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.navigation_voice:
+                        startActivity(new Intent(getApplicationContext(), voice_command.class));
+                        overridePendingTransition(0,0);
+                        return true;
                     case R.id.navigation_dashboard:
                         startActivity(new Intent(getApplicationContext(), Dashbord2.class));
                         overridePendingTransition(0,0);
+                        return true;
                     case R.id.navigation_calendar:
                         startActivity(new Intent(getApplicationContext(), CalendarMain.class));
                         overridePendingTransition(0,0);
@@ -84,6 +89,12 @@ public class FunMenu extends AppCompatActivity {
                     case R.id.navigation_dashboard:
                         startActivity(new Intent(getApplicationContext(), Dashbord2.class));
                         overridePendingTransition(0,0);
+                        return  true;
+                    case R.id.navigation_voice:
+                        startActivity(new Intent(getApplicationContext(), voice_command.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
                     case R.id.navigation_calendar:
                         startActivity(new Intent(getApplicationContext(), CalendarMain.class));
                         overridePendingTransition(0,0);

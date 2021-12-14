@@ -143,7 +143,7 @@
             android:layout_height="50dp"
             android:background="@drawable/round_corner_toggle_password"
             android:drawableStart="@drawable/ic_password"
-            android:hint="password"
+            android:hint="Password"
             android:inputType="textPassword"
             android:paddingLeft="10dp"
             android:textColor="#000000"

@@ -71,7 +71,7 @@ public class DiscoMoodActivity extends AppCompatActivity {
 
         ObjectAnimator animator2= ObjectAnimator.ofInt(textView2,"backgroundColor", Color.WHITE,Color.RED,Color.WHITE);
 
-        animator2.setDuration(800);
+        animator2.setDuration(700);
 
         animator2.setEvaluator(new ArgbEvaluator());
         animator2.setRepeatMode(ValueAnimator.REVERSE);
@@ -80,7 +80,7 @@ public class DiscoMoodActivity extends AppCompatActivity {
 
         ObjectAnimator animator3= ObjectAnimator.ofInt(textView3,"backgroundColor", Color.WHITE,Color.MAGENTA,Color.WHITE);
 
-        animator3.setDuration(800);
+        animator3.setDuration(600);
 
         animator3.setEvaluator(new ArgbEvaluator());
         animator3.setRepeatMode(ValueAnimator.REVERSE);
@@ -89,7 +89,7 @@ public class DiscoMoodActivity extends AppCompatActivity {
 
         ObjectAnimator animator4= ObjectAnimator.ofInt(textView4,"backgroundColor", Color.WHITE,Color.GREEN,Color.WHITE);
 
-        animator4.setDuration(800);
+        animator4.setDuration(720);
 
         animator4.setEvaluator(new ArgbEvaluator());
         animator4.setRepeatMode(ValueAnimator.REVERSE);
@@ -98,7 +98,7 @@ public class DiscoMoodActivity extends AppCompatActivity {
 
         ObjectAnimator animator5= ObjectAnimator.ofInt(textView5,"backgroundColor", Color.WHITE,Color.BLUE,Color.WHITE);
 
-        animator5.setDuration(800);
+        animator5.setDuration(650);
 
         animator5.setEvaluator(new ArgbEvaluator());
         animator5.setRepeatMode(ValueAnimator.REVERSE);
@@ -107,7 +107,7 @@ public class DiscoMoodActivity extends AppCompatActivity {
 
         ObjectAnimator animator6= ObjectAnimator.ofInt(textView6,"backgroundColor", Color.WHITE,Color.RED,Color.WHITE);
 
-        animator6.setDuration(800);
+        animator6.setDuration(580);
 
         animator6.setEvaluator(new ArgbEvaluator());
         animator6.setRepeatMode(ValueAnimator.REVERSE);

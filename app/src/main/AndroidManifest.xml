@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Homedork"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".voice_command"
+            android:exported="false" />
+        <activity
             android:name=".Fun.FunMenu"
             android:exported="false" />
         <activity

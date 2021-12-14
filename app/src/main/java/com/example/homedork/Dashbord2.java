@@ -10,9 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-
 import androidx.annotation.NonNull;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -20,7 +18,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.homedork.Calendar.CalendarMain;
 import com.example.homedork.Fun.FunMenu;
-import com.example.homedork.Fun.Game;
 import com.example.homedork.Mood.MoodsActivity;
 import com.example.homedork.Settings.MainVibrate;
 import com.example.homedork.api.fan.api.FanRequests;
@@ -59,9 +56,14 @@ public class Dashbord2 extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), FunMenu.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.navigation_voice:
+                        startActivity(new Intent(getApplicationContext(), voice_command.class));
+                        overridePendingTransition(0,0);
+                        return true;
                     case R.id.navigation_dashboard:
                         startActivity(new Intent(getApplicationContext(), Dashbord2.class));
                         overridePendingTransition(0,0);
+                        return true;
                     case R.id.navigation_calendar:
                         startActivity(new Intent(getApplicationContext(), CalendarMain.class));
                         overridePendingTransition(0,0);
@@ -85,11 +87,14 @@ public class Dashbord2 extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.navigation_dashboard:
-
                         return true;
                     case R.id.navigation_calendar:
                         startActivity(new Intent(getApplicationContext(), CalendarMain.class));
                         overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.navigation_voice:
+                        startActivity(new Intent(getApplicationContext(), voice_command.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_settings:
                         startActivity(new Intent(getApplicationContext(), MainVibrate.class));

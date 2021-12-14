@@ -18,6 +18,13 @@
         tools:layout="@layout/dashboard"
         />
 
+    <activity
+        android:id="@+id/navigation_voice"
+        android:name="com.example.homedork.Dashbord2"
+        android:label="@string/title_devices"
+        tools:layout="@layout/activity_voice_command"
+        />
+
 
     <activity
         android:id="@+id/navigation_game"

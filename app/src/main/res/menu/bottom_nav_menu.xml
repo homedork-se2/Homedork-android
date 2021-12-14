@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="Devices" />
+
     <item
         android:id="@+id/navigation_calendar"
         android:icon="@drawable/ic_baseline_calendar_today_24"
         android:title="Calendar" />
+
+    <item
+        android:id="@+id/navigation_voice"
+        android:icon="@drawable/micc"
+        android:title="Voice" />
 
     <item
         android:id="@+id/navigation_game"
@@ -16,10 +27,7 @@
         android:icon="@drawable/ic_baseline_settings_24"
         android:title="Settings" />
 
-    <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Devices" />
+
 
 
 </menu>

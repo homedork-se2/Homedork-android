@@ -62,7 +62,7 @@ public class DashboardService {
 
 
 
-        l.setBackground(context.getDrawable(R.drawable.lamp_back));
+        l.setBackground(context.getDrawable(R.drawable.fan_back));
         l.getLayoutParams().height = 400;
         params1.leftMargin = 25;
 
@@ -146,7 +146,7 @@ public class DashboardService {
         RelativeLayout.LayoutParams params1 = (RelativeLayout.LayoutParams) l.getLayoutParams();
         params1.height = 400;
         params1.width = 1000;
-        l.setBackground(context.getDrawable(R.drawable.lamp_back));
+        l.setBackground(context.getDrawable(R.drawable.fan_back));
         params1.leftMargin = 25;
         // params.addRule(RelativeLayout.ALIGN_RIGHT);
 
