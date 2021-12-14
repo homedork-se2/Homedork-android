@@ -5,33 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/glass"
-    tools:context="com.example.homedork.Game">
+    android:background="#FFFFFF"
+    tools:context="com.example.homedork.Fun.Game">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/tvText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/btnSpeak"
-            android:layout_marginTop="310dp"
-            android:layout_marginBottom="19dp"
-            android:gravity="center_horizontal"
-            android:padding="8dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
 
-        <ImageButton
-            android:id="@+id/btnSpeak"
-            android:layout_width="103dp"
-            android:layout_height="99dp"
-            android:layout_centerInParent="true"
-            android:background="#00000000"
-            android:filterTouchesWhenObscured="false"
-            android:src="@drawable/mic" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/nav_viewside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fadingEdge="horizontal"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/bottom_nav_menu" />
 
         <TextView
             android:id="@+id/text_view_p1"
@@ -39,7 +30,8 @@
             android:layout_height="wrap_content"
             android:freezesText="true"
             android:text="Player 1: 0"
-            android:textSize="30sp" />
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/text_view_p2"
@@ -48,18 +40,20 @@
             android:layout_below="@+id/text_view_p1"
             android:freezesText="true"
             android:text="Player 2: 0"
-            android:textSize="30sp" />
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button_reset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="@color/bright_orange"
             android:layout_centerVertical="true"
             android:layout_marginEnd="33dp"
-            android:text="reset"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="33dp" />
+            android:layout_marginRight="33dp"
+            android:text="reset" />
 
     </RelativeLayout>
 
@@ -75,13 +69,13 @@
             android:layout_weight="1"
             android:freezesText="true"
             android:textSize="60sp"
-            app:backgroundTint="#612B5B85"
+            app:backgroundTint="#34818080"
             />
 
         <Button
             android:id="@+id/button_01"
             android:layout_width="0dp"
-            app:backgroundTint="#612B5B85"
+            app:backgroundTint="#34818080"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:freezesText="true"
@@ -92,7 +86,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:backgroundTint="#612B5B85"
+            app:backgroundTint="#34818080"
 
             android:freezesText="true"
             android:textSize="60sp" />
@@ -107,8 +101,7 @@
         <Button
             android:id="@+id/button_10"
             android:layout_width="0dp"
-            app:backgroundTint="#612B5B85"
-
+            app:backgroundTint="#34818080"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:freezesText="true"
@@ -120,16 +113,17 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:freezesText="true"
-
             android:textSize="60sp"
-            app:backgroundTint="#612B5B85" />
+            app:backgroundTint="#34818080"
+
+            />
 
         <Button
             android:id="@+id/button_12"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:backgroundTint="#612B5B85"
+            app:backgroundTint="#34818080"
 
             android:freezesText="true"
             android:textSize="60sp" />
@@ -147,7 +141,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:freezesText="true"
-            app:backgroundTint="#612B5B85"
+            app:backgroundTint="#34818080"
 
             android:textSize="60sp" />
 
@@ -159,14 +153,16 @@
             android:freezesText="true"
 
             android:textSize="60sp"
-            app:backgroundTint="#612B5B85" />
+            app:backgroundTint="#34818080"
+            />
 
         <Button
             android:id="@+id/button_22"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:backgroundTint="#612B5B85"
+            app:backgroundTint="#34818080"
+
 
             android:freezesText="true"
             android:textSize="60sp"  />
@@ -179,16 +175,7 @@
         >
 
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/nav_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="?android:attr/windowBackground"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/bottom_nav_menu" />
+
     </LinearLayout>
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.homedork;
+package com.example.homedork.Fun;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -12,8 +12,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.homedork.Calendar.CalendarMain;
+import com.example.homedork.Dashbord2;
+import com.example.homedork.R;
 import com.example.homedork.Settings.MainVibrate;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -62,15 +65,14 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             }
         });
 
-
-        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_game);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        Toolbar toolbar= findViewById(R.id.nav_viewside);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                switch (menuItem.getItemId()){
                     case R.id.navigation_game:
+                        startActivity(new Intent(getApplicationContext(), FunMenu.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_dashboard:
                         startActivity(new Intent(getApplicationContext(), Dashbord2.class));
@@ -80,13 +82,12 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_settings:
-                        startActivity(new Intent(getApplicationContext(), MainVibrate.class));
-                        overridePendingTransition(0,0);
                         return true;
+                }
+                return false;
             }
-            return false;
-        }
-    });
+        });
+
     }
 
     @Override

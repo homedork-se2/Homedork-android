@@ -28,7 +28,7 @@ public class DashboardService {
     private LampRequests lampRequests = new LampRequests();
     private FanRequests fanRequests = new FanRequests();
 
-    @SuppressLint("WrongConstant")
+    @SuppressLint({"WrongConstant", "ResourceAsColor"})
     public void addDynamicSwitchButton(LinearLayout layout, Context context, int id, String userId, Lamp lamp) {
         //Five switchMaterial
         //View view = View.inflate(context, "", false);
@@ -62,7 +62,7 @@ public class DashboardService {
 
 
 
-        l.setBackground(context.getDrawable(R.drawable.lamp_back));
+        l.setBackground(context.getDrawable(R.drawable.fan_back));
         l.getLayoutParams().height = 400;
         params1.leftMargin = 25;
 

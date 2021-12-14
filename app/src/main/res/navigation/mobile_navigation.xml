@@ -18,12 +18,19 @@
         tools:layout="@layout/dashboard"
         />
 
+    <activity
+        android:id="@+id/navigation_voice"
+        android:name="com.example.homedork.Dashbord2"
+        android:label="@string/title_devices"
+        tools:layout="@layout/activity_voice_command"
+        />
+
 
     <activity
         android:id="@+id/navigation_game"
-        android:name="com.example.homedork.Game"
+        android:name="com.example.homedork.Fun.FunMenu"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/activity_game" />
+        tools:layout="@layout/activity_fun_menu" />
 
     <fragment
         android:id="@+id/navigation_settings"

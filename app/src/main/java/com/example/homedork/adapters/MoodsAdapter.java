@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.homedork.Mood.EditMoodActivity;
+import com.example.homedork.Mood.MoodsActivity;
 import com.example.homedork.R;
 import com.example.homedork.models.Mood;
 
@@ -53,9 +54,7 @@ public class MoodsAdapter extends RecyclerView.Adapter<MoodsAdapter.MoodsHolder>
         holder.ibEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, EditMoodActivity.class);
-                intent.putExtra("position", position);
-                mContext.startActivity(intent);
+                ((MoodsActivity)mContext).showItemOptions(holder.ibEdit, position);
             }
         });
     }
