@@ -20,8 +20,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.homedork.Dashbord2;
 import com.example.homedork.Fun.FunMenu;
+import com.example.homedork.Profile;
 import com.example.homedork.R;
 import com.example.homedork.Settings.MainVibrate;
+import com.example.homedork.Settings.SettingsActivity;
 import com.example.homedork.voice_command;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -69,7 +71,7 @@ public class CalendarMain extends AppCompatActivity implements CalendarAdapter.O
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_settings:
-                        startActivity(new Intent(getApplicationContext(), MainVibrate.class));
+                        startActivity(new Intent(getApplicationContext(), Profile.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

@@ -20,7 +20,7 @@
 
     <activity
         android:id="@+id/navigation_voice"
-        android:name="com.example.homedork.Dashbord2"
+        android:name="com.example.homedork.voice_command"
         android:label="@string/title_devices"
         tools:layout="@layout/activity_voice_command"
         />
@@ -32,10 +32,10 @@
         android:label="@string/title_dashboard"
         tools:layout="@layout/activity_fun_menu" />
 
-    <fragment
+    <activity
         android:id="@+id/navigation_settings"
-        android:name="com.example.homedork.Settings.SettingsFragment"
-        android:label="@string/title_settings"
-        tools:layout="@layout/activity_vibrate" />
+        android:name="com.example.homedork.Profile"
+        android:label="@string/title_profile"
+        tools:layout="@layout/activity_profile" />
 
 </navigation>

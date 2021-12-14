@@ -14,6 +14,12 @@
         android:theme="@style/Theme.Homedork"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".signup.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".voice_command"
             android:exported="false" />
         <activity

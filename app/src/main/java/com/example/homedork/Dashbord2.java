@@ -61,14 +61,14 @@ public class Dashbord2 extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_dashboard:
-                        startActivity(new Intent(getApplicationContext(), Dashbord2.class));
-                        overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_calendar:
                         startActivity(new Intent(getApplicationContext(), CalendarMain.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_settings:
+                        startActivity(new Intent(getApplicationContext(), Profile.class));
+                        overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
@@ -97,7 +97,7 @@ public class Dashbord2 extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_settings:
-                        startActivity(new Intent(getApplicationContext(), MainVibrate.class));
+                        startActivity(new Intent(getApplicationContext(), Profile.class));
                         overridePendingTransition(0, 0);
                         return true;
                 }

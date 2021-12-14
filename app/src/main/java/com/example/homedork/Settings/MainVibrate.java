@@ -76,61 +76,7 @@ public class MainVibrate extends AppCompatActivity {
             startActivity(intent);
         });
 
-        Toolbar toolbar= findViewById(R.id.nav_viewside);
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-                    case R.id.navigation_game:
-                        startActivity(new Intent(getApplicationContext(), FunMenu.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.navigation_voice:
-                        startActivity(new Intent(getApplicationContext(), voice_command.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.navigation_dashboard:
-                        startActivity(new Intent(getApplicationContext(), Dashbord2.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.navigation_calendar:
-                        startActivity(new Intent(getApplicationContext(), CalendarMain.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.navigation_settings:
-                        return true;
-                }
-                return false;
-            }
-        });
-        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_settings);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.navigation_game:
-                        startActivity(new Intent(getApplicationContext(), FunMenu.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.navigation_dashboard:
-                        startActivity(new Intent(getApplicationContext(), Dashbord2.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.navigation_voice:
-                        startActivity(new Intent(getApplicationContext(), voice_command.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.navigation_calendar:
-                        startActivity(new Intent(getApplicationContext(), CalendarMain.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.navigation_settings:
-                        return true;
-                }
-                return false;
-            }
-        });
+
 
 
     }
