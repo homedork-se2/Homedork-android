@@ -4,17 +4,24 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
 
+import com.example.homedork.Calendar.CalendarMain;
+import com.example.homedork.Fun.FunMenu;
 import com.example.homedork.Fun.Game;
+import com.example.homedork.Settings.MainVibrate;
 import com.example.homedork.Settings.SettingsActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
@@ -51,7 +58,70 @@ public class voice_command extends AppCompatActivity {
                 }
             }
         });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_settings);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.navigation_game:
+                        startActivity(new Intent(getApplicationContext(), FunMenu.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_dashboard:
+                        startActivity(new Intent(getApplicationContext(), Dashbord2.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_voice:
+
+                        return true;
+                    case R.id.navigation_calendar:
+                        startActivity(new Intent(getApplicationContext(), CalendarMain.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_settings:
+                        startActivity(new Intent(getApplicationContext(), MainVibrate.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
+        Toolbar toolbar= findViewById(R.id.nav_viewside);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.navigation_game:
+                        startActivity(new Intent(getApplicationContext(), FunMenu.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_dashboard:
+                        startActivity(new Intent(getApplicationContext(), Dashbord2.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_voice:
+
+                        return true;
+                    case R.id.navigation_calendar:
+                        startActivity(new Intent(getApplicationContext(), CalendarMain.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_settings:
+                        startActivity(new Intent(getApplicationContext(), MainVibrate.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
+
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
