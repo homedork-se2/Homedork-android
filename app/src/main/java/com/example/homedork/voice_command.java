@@ -60,7 +60,7 @@ public class voice_command extends AppCompatActivity {
         });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_settings);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_voice);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -81,7 +81,7 @@ public class voice_command extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_settings:
-                        startActivity(new Intent(getApplicationContext(), MainVibrate.class));
+                        startActivity(new Intent(getApplicationContext(), Profile.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -103,14 +103,13 @@ public class voice_command extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_voice:
-
                         return true;
                     case R.id.navigation_calendar:
                         startActivity(new Intent(getApplicationContext(), CalendarMain.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_settings:
-                        startActivity(new Intent(getApplicationContext(), MainVibrate.class));
+                        startActivity(new Intent(getApplicationContext(), Profile.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
