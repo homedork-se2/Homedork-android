@@ -3,6 +3,7 @@ package com.example.homedork.Settings;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.MenuItem;
@@ -12,10 +13,13 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
 
 
 import com.example.homedork.Calendar.CalendarMain;
@@ -33,6 +37,7 @@ public class MainVibrate extends AppCompatActivity {
     private TextView tvText;
     protected static final int RESULT_SPEECH= 1;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
@@ -73,6 +78,28 @@ public class MainVibrate extends AppCompatActivity {
             startActivity(intent);
         });
 
+        Toolbar toolbar= findViewById(R.id.nav_viewside);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.navigation_game:
+                        startActivity(new Intent(getApplicationContext(), FunMenu.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_dashboard:
+                        startActivity(new Intent(getApplicationContext(), Dashbord2.class));
+                        overridePendingTransition(0,0);
+                    case R.id.navigation_calendar:
+                        startActivity(new Intent(getApplicationContext(), CalendarMain.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_settings:
+                        return true;
+                }
+                return false;
+            }
+        });
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
         bottomNavigationView.setSelectedItemId(R.id.navigation_settings);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

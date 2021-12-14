@@ -50,6 +50,18 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="703dp" />
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/nav_viewside"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        android:fadingEdge="horizontal"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
