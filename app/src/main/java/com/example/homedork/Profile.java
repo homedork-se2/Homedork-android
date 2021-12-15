@@ -2,6 +2,7 @@ package com.example.homedork;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
@@ -24,6 +25,11 @@ public class Profile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.HighContrast); // When dark mode is enabled, we use the contrast theme
+        } else {
+            setTheme(R.style.Theme_Homedork); // Default app theme
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
