@@ -19,7 +19,6 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.homedork.Calendar.CalendarMain;
 import com.example.homedork.Fun.FunMenu;
 import com.example.homedork.Mood.MoodsActivity;
-import com.example.homedork.Settings.MainVibrate;
 import com.example.homedork.api.fan.api.FanRequests;
 import com.example.homedork.api.lamp.api.LampRequests;
 import com.example.homedork.dashboard.DashboardService;
