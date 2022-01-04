@@ -21,6 +21,7 @@ import com.example.homedork.Fun.FunMenu;
 import com.example.homedork.Mood.MoodsActivity;
 import com.example.homedork.api.fan.api.FanRequests;
 import com.example.homedork.api.lamp.api.LampRequests;
+import com.example.homedork.api.thermometer.api.ThermometerRequests;
 import com.example.homedork.dashboard.DashboardService;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -123,8 +124,10 @@ public class Dashbord2 extends AppCompatActivity {
         String uid = FirebaseAuth.getInstance().getUid();
         LampRequests lampRequests = new LampRequests();
         FanRequests fanRequests = new FanRequests();
+        ThermometerRequests thermometer = new ThermometerRequests();
         lampRequests.getUserLamps(this.findViewById(R.id.c), new ImageView(this), this, "123");
         fanRequests.getFans(this.findViewById(R.id.c), new ImageView(this), this, "123");
+        thermometer.getUserThermometers(this.findViewById(R.id.c), new ImageView(this), this, "123");
 
 
 

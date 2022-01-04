@@ -1,13 +1,14 @@
 package com.example.homedork.api.fan.api;
 
 import android.content.Context;
+import android.os.Build;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import androidx.annotation.RequiresApi;
+
 import com.example.homedork.api.InitializeAPI;
-import com.example.homedork.api.lamp.api.LampSpecificAPICall;
 import com.example.homedork.api.model.device.Fan;
-import com.example.homedork.api.model.device.Lamp;
 import com.example.homedork.dashboard.DashboardService;
 
 import java.util.List;
@@ -15,8 +16,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.http.GET;
-import retrofit2.http.Path;
 
 public class FanRequests {
 
@@ -24,6 +23,7 @@ public class FanRequests {
 
     public void getFans(LinearLayout layout, ImageView imageView, Context context, String userId){
         fanSpecificAPICall.getFans(userId).enqueue(new Callback<List<Fan>>() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onResponse(Call<List<Fan>> call, Response<List<Fan>> response) {
 

@@ -18,6 +18,8 @@ import com.example.homedork.api.fan.api.FanRequests;
 import com.example.homedork.api.lamp.api.LampRequests;
 import com.example.homedork.api.model.device.Fan;
 import com.example.homedork.api.model.device.Lamp;
+import com.example.homedork.api.model.device.Thermometer;
+import com.example.homedork.api.thermometer.api.ThermometerRequests;
 import com.google.android.material.slider.RangeSlider;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
@@ -27,6 +29,7 @@ import java.util.List;
 public class DashboardService {
     private LampRequests lampRequests = new LampRequests();
     private FanRequests fanRequests = new FanRequests();
+    private ThermometerRequests thermometerRequests = new ThermometerRequests();
 
     @SuppressLint({"WrongConstant", "ResourceAsColor"})
     public void addDynamicSwitchButton(LinearLayout layout, Context context, int id, String userId, Lamp lamp) {
@@ -205,6 +208,106 @@ public class DashboardService {
 
         rangeSliderToServerLight(rangeSlider, String.valueOf(fan.id));
         switchButton(switchMaterial, String.valueOf(fan.id));
+    }
+
+
+    public void addDynamicRangeSlide(LinearLayout layout, Context context, int id, String userId, Thermometer thermometer) {
+        SwitchMaterial switchMaterial = new SwitchMaterial(context);
+
+        TextView textView2 = new TextView(context);
+
+
+        //Five switchMaterial
+        //View view = View.inflate(context, "", false);
+        RelativeLayout l = new RelativeLayout(context);
+
+        ImageView imageView = new ImageView(context);
+        //Button switchMaterial = new Button(context);
+        RangeSlider rangeSlider = new RangeSlider(context);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //View view = inflater.inflate(R.layout.dashboard,"", false);
+        textView2.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
+        switchMaterial.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
+
+        rangeSlider.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
+
+        l.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
+        imageView.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
+        RelativeLayout.LayoutParams paramsss = (RelativeLayout.LayoutParams) switchMaterial.getLayoutParams();
+
+        RelativeLayout.LayoutParams paramsText = (RelativeLayout.LayoutParams) textView2.getLayoutParams();
+
+
+        textView2.setText("Control the Tempreture " + String.valueOf(id));
+        paramsText.topMargin = 70;
+        paramsText.rightMargin = 20;
+        paramsText.leftMargin = 280;
+        textView2.setTextSize(17);
+
+
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) rangeSlider.getLayoutParams();
+        RelativeLayout.LayoutParams params1 = (RelativeLayout.LayoutParams) l.getLayoutParams();
+        params1.height = 400;
+        params1.width = 1000;
+        l.setBackground(context.getDrawable(R.drawable.fan_back));
+        params1.leftMargin = 25;
+        // params.addRule(RelativeLayout.ALIGN_RIGHT);
+
+     /*   if (context.equals(true)){
+
+            rangeSlider.setVisibility(View.VISIBLE);
+
+            params.topMargin = 30;
+            params.setMarginEnd(190);
+            params.rightMargin = 20;
+            params.leftMargin = 160;
+            rangeSlider.setLayoutParams(params);
+            params.width = 550;
+        }else {
+            rangeSlider.setVisibility(View.GONE);
+        }
+
+      */
+
+
+        params.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+        params.addRule(RelativeLayout.ALIGN_PARENT_END);
+        params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+
+        params.topMargin = 200;
+        params.setMarginEnd(190);
+        params.rightMargin = 20;
+        params.leftMargin = 160;
+        rangeSlider.setLayoutParams(params);
+        params.width = 550;
+
+
+        paramsss.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+        paramsss.addRule(RelativeLayout.ALIGN_PARENT_END);
+        paramsss.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+        paramsss.topMargin = 40;
+        paramsss.setMarginEnd(20);
+        paramsss.rightMargin = 20;
+        switchMaterial.setLayoutParams(paramsss);
+        paramsss.width = 550;
+
+
+        imageView.setImageResource(R.drawable.thermo);
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        lp.setMargins(55, 60, lp.leftMargin, lp.bottomMargin);
+        imageView.setLayoutParams(lp);
+        imageView.getLayoutParams().height = 100;
+        imageView.getLayoutParams().width = 100;
+
+        l.addView(imageView);
+        l.addView(textView2);
+        l.addView(rangeSlider, imageView.getId());
+        l.addView(switchMaterial);
+        layout.addView(l);
+
+
+        rangeSliderToServerLight(rangeSlider, String.valueOf(thermometer.id));
+        switchButton(switchMaterial, String.valueOf(thermometer.id));
     }
 
 

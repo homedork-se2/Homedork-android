@@ -1,22 +1,24 @@
 package com.example.homedork.api.lamp.api;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Build;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.example.homedork.R;
+import androidx.annotation.RequiresApi;
+
 import com.example.homedork.api.InitializeAPI;
 import com.example.homedork.api.model.device.Lamp;
 import com.example.homedork.dashboard.DashboardService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class LampRequests {
 
     private LampSpecificAPICall lampSpecificAPICall = InitializeAPI.getRetrofitInstance().create(LampSpecificAPICall.class);
@@ -93,10 +95,11 @@ public class LampRequests {
             }
         });
     }
-
+    @SuppressLint("LongLogTag")
     public void retrieveUserSpecificLamp(String userId, String lampId){
 
         lampSpecificAPICall.getUserSpecificLamp(userId, lampId).enqueue(new Callback<Lamp>() {
+
             @Override
             public void onResponse(Call<Lamp> call, Response<Lamp> response) {
                 Log.e("retrieveUserSpecificLamp", "Response: "+response.code());

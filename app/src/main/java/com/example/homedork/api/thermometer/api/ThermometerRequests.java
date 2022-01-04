@@ -1,9 +1,15 @@
 package com.example.homedork.api.thermometer.api;
 
+import android.content.Context;
+import android.os.Build;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
+import androidx.annotation.RequiresApi;
+
 import com.example.homedork.api.InitializeAPI;
-import com.example.homedork.api.lamp.api.LampSpecificAPICall;
-import com.example.homedork.api.model.device.Fan;
 import com.example.homedork.api.model.device.Thermometer;
+import com.example.homedork.dashboard.DashboardService;
 
 import java.util.List;
 
@@ -11,14 +17,23 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class ThermometerRequests {
     private ThermometerSpecificAPICall thermometerSpecificAPICall = InitializeAPI.getRetrofitInstance().create(ThermometerSpecificAPICall.class);
 
-        public void getUserThermometers(String userId){
+        public void getUserThermometers( LinearLayout layout, ImageView imageView, Context context, String userId){
             thermometerSpecificAPICall.getThermometers(userId).enqueue(new Callback<List<Thermometer>>() {
                 @Override
                 public void onResponse(Call<List<Thermometer>> call, Response<List<Thermometer>> response) {
+                    if (response.body() != null) {
+                        List<Thermometer> Thermometer = response.body();
+                        DashboardService dashboardService = new DashboardService();
 
+                        for (int i = 0; i < Thermometer.size(); i++) {
+                            dashboardService.addDynamicRangeSlide(layout, context, i, userId, Thermometer.get(i));
+                            // dashboardService.addDynamicSwitchButton(layout,  context, i, userId, fans.get(i));
+                        }
+                    }
                 }
 
                 @Override
