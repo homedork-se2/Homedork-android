@@ -15,15 +15,15 @@ public interface AlarmSpecificAPICall {
     Call<Fan> getAlarm(@Path("userId") String userId, @Path("alarmId") String fanId);
 
     // All the request methods below are for testing purposes only
-    @GET("{userId}/alarms")
+    @GET("hd-api/users/{userId}/alarms")
     Call<List<Fan>> getFans(@Path("userId") String userId);
 
-    @PUT("{userId}/{fanId}/adjust/{value}")
+    @PUT("hd-api/users/{userId}/alarms/{fanId}/adjust/{value}")
     Call<Fan> slideFanValue(@Path("userId") String userId, @Path("fanId") String lampId, @Path("value") String value);
 
-    @PUT("{userId}/{alarmId}/turnOff")
+    @PUT("hd-api/users/{userId}/alarms/{alarmId}/turnOff")
     Call<Fan> turnFanOff(@Path("fanId") String lampId, @Path("userId") String userId);
 
-    @PUT("{userId}/{alarmId}/turnOn")
+    @PUT("hd-api/users/{userId}/alarms/{alarmId}/turnOn")
     Call<Fan> turnFanOn(@Path("userId") String userId, @Path("fanId") String lampId);
 }
