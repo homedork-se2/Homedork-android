@@ -24,7 +24,7 @@ public interface CurtainSpecificAPICall {
     Call<Curtain> slideCurtainValue(@Path("userId") String userId, @Path("curtainId") String curtainId, @Path("value") String value);
 
     @PUT("hd-api/users/{userId}/curtains/{curtainId}/turnOff")
-    Call<Curtain> turnCurtainOff(@Path("curtainId") String curtainId, @Path("userId") String userId);
+    Call<Curtain> turnCurtainOff( @Path("userId") String userId, @Path("curtainId") String curtainId);
 
     @PUT("hd-api/users/{userId}/curtains/{curtainId}/turnOn")
     Call<Curtain> turnCurtainOn(@Path("userId") String userId, @Path("curtainId") String curtainId);

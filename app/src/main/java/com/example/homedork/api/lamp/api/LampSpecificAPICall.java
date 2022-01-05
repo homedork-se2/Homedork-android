@@ -48,7 +48,7 @@ public interface LampSpecificAPICall {
     Call<Lamp> slideLampValue(@Path("userId") String userId, @Path("lampId") String lampId, @Path("value") Float value);
 
     @PUT("hd-api/users/{userId}/lamps/{lampId}/turnOff")
-    Call<Lamp> turnLampOff(@Path("lampId") String lampId, @Path("userId") String userId);
+    Call<Lamp> turnLampOff( @Path("userId") String userId,@Path("lampId") String lampId);
 
     @PUT("hd-api/users/{userId}/lamps/{lampId}/turnOn")
     Call<Lamp> turnLampOn(@Path("userId") String userId, @Path("lampId") String lampId);

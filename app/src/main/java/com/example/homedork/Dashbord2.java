@@ -24,6 +24,7 @@ import com.example.homedork.api.curtain.api.CurtainRequests;
 import com.example.homedork.api.fan.api.FanRequests;
 import com.example.homedork.api.lamp.api.LampRequests;
 import com.example.homedork.api.thermometer.api.ThermometerRequests;
+import com.example.homedork.api.window.api.WindowRequest;
 import com.example.homedork.dashboard.DashboardService;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -129,11 +130,13 @@ public class Dashbord2 extends AppCompatActivity {
         ThermometerRequests thermometer = new ThermometerRequests();
         CurtainRequests curtainRequests = new CurtainRequests();
         AlarmRequests alarmRequests = new AlarmRequests();
+        WindowRequest windowRequest = new WindowRequest();
         lampRequests.getUserLamps(this.findViewById(R.id.c), new ImageView(this), this, "123");
         fanRequests.getFans(this.findViewById(R.id.c), new ImageView(this), this, "123");
         thermometer.getUserThermometers(this.findViewById(R.id.c), new ImageView(this), this, "123");
         curtainRequests.getCurtains(this.findViewById(R.id.c), new ImageView(this), this, "123");
         alarmRequests.getAlarms(this.findViewById(R.id.c), new ImageView(this), this, "123");
+        windowRequest.getUserWindows(this.findViewById(R.id.c), new ImageView(this), this, "123");
 
 
 
