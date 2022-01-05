@@ -13,7 +13,7 @@ import retrofit2.http.Path;
 public interface CurtainSpecificAPICall {
 
 
-    @PUT("hd-api/users/{userId}/curtainsz/{curtainid}")
+    @PUT("hd-api/users/{userId}/curtains/{curtainid}")
     Call<Curtain> getCurtain(@Path("userId") String userId, @Path("curtainid") String curtainid);
 
     // All the request methods below are for testing purposes only

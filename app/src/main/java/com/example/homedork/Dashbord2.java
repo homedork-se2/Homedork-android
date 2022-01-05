@@ -19,6 +19,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.homedork.Calendar.CalendarMain;
 import com.example.homedork.Fun.FunMenu;
 import com.example.homedork.Mood.MoodsActivity;
+import com.example.homedork.api.alarm.api.AlarmRequests;
 import com.example.homedork.api.curtain.api.CurtainRequests;
 import com.example.homedork.api.fan.api.FanRequests;
 import com.example.homedork.api.lamp.api.LampRequests;
@@ -127,10 +128,12 @@ public class Dashbord2 extends AppCompatActivity {
         FanRequests fanRequests = new FanRequests();
         ThermometerRequests thermometer = new ThermometerRequests();
         CurtainRequests curtainRequests = new CurtainRequests();
+        AlarmRequests alarmRequests = new AlarmRequests();
         lampRequests.getUserLamps(this.findViewById(R.id.c), new ImageView(this), this, "123");
         fanRequests.getFans(this.findViewById(R.id.c), new ImageView(this), this, "123");
         thermometer.getUserThermometers(this.findViewById(R.id.c), new ImageView(this), this, "123");
         curtainRequests.getCurtains(this.findViewById(R.id.c), new ImageView(this), this, "123");
+        alarmRequests.getAlarms(this.findViewById(R.id.c), new ImageView(this), this, "123");
 
 
 
