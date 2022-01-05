@@ -1,5 +1,6 @@
 package com.example.homedork.api.lamp.api;
 
+import com.example.homedork.api.model.device.Fan;
 import com.example.homedork.api.model.device.Lamp;
 
 import java.util.List;
@@ -37,10 +38,13 @@ public interface LampSpecificAPICall {
      */
 
     // All the request methods below are for testing purposes only
+    @PUT("hd-api/users/{userId}/lamps/{lampId}")
+    Call<Fan> getLamp(@Path("userId") String userId, @Path("lampId") String lampId);
+
     @GET("hd-api/users/{userId}/lamps")
     Call<List<Lamp>> getUserLamps(@Path("userId") String userId);
 
-    @PUT("hd-api/users/{userId}/lamps/{lampId}/adjust/lamp/{value}")
+    @PUT("hd-api/users/{userId}/lamps/{lampId}/adjust/{value}")
     Call<Lamp> slideLampValue(@Path("userId") String userId, @Path("lampId") String lampId, @Path("value") Float value);
 
     @PUT("hd-api/users/{userId}/lamps/{lampId}/turnOff")

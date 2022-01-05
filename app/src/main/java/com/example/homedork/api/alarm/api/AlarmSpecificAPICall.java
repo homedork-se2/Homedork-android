@@ -17,11 +17,11 @@ public interface AlarmSpecificAPICall {
     Call<List<Alarm>> getAlarms(@Path("userId") String userId);
 
     @PUT("hd-api/users/{userId}/alarms/{alarmId}/adjust/{value}")
-    Call<Alarm> slideAlarmValue(@Path("userId") String userId, @Path("alarmId") String lampId, @Path("value") String value);
+    Call<Alarm> slideAlarmValue(@Path("userId") String userId, @Path("alarmId") String alarmId, @Path("value") String value);
 
     @PUT("hd-api/users/{userId}/alarms/{alarmId}/turnOff")
-    Call<Alarm> turnAlarmOff(@Path("alarmId") String lampId, @Path("userId") String userId);
+    Call<Alarm> turnAlarmOff(@Path("alarmId") String alarmId, @Path("userId") String userId);
 
     @PUT("hd-api/users/{userId}/alarms/{alarmId}/turnOn")
-    Call<Alarm> turnAlarmOn(@Path("userId") String userId, @Path("alarmId") String lampId);
+    Call<Alarm> turnAlarmOn(@Path("userId") String userId, @Path("alarmId") String alarmId);
 }

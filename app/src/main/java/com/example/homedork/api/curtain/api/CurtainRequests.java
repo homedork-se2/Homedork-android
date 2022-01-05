@@ -2,6 +2,7 @@ package com.example.homedork.api.curtain.api;
 
 import android.content.Context;
 import android.os.Build;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -49,14 +50,37 @@ public class CurtainRequests {
     }
 
 
+    public void turnCurtainOn(String userId, String curtainId){
+        curtainSpecificAPICall.turnCurtainOn(userId, curtainId).enqueue(new Callback<Curtain>() {
+            @Override
+            public void onResponse(Call<Curtain> call, Response<Curtain> response) {
+                Log.e("turnCurtainOn", "Response: "+response.code());
+            }
 
+            @Override
+            public void onFailure(Call<Curtain> call, Throwable t) {
+                Log.e("turnCurtainOn", "Failed Response: "+t.getMessage());
+            }
+        });
 
+    }
 
+    public void turnCurtainOff(String userId, String curtainId){
+        curtainSpecificAPICall.turnCurtainOff(userId, curtainId).enqueue(new Callback<Curtain>() {
+            @Override
+            public void onResponse(Call<Curtain> call, Response<Curtain> response) {
+                Log.e("turnCurtainOff", "Response: "+response.code());
+            }
 
+            @Override
+            public void onFailure(Call<Curtain> call, Throwable t) {
+                Log.e("turnCurtainOff", "Failed Response: "+t.getMessage());            }
+        });
 
+    }
 
-    public void turnCurtainOn(String userId, String curtainid){
-        curtainSpecificAPICall.turnCurtainOn(userId, curtainid).enqueue(new Callback<Curtain>() {
+    public void getCurtain(String userId, String curtainId){
+        curtainSpecificAPICall.getCurtain(userId, curtainId).enqueue(new Callback<Curtain>() {
             @Override
             public void onResponse(Call<Curtain> call, Response<Curtain> response) {
 
@@ -70,46 +94,16 @@ public class CurtainRequests {
 
     }
 
-    public void turnCurtainOff(String userId, String curtainid){
-        curtainSpecificAPICall.turnCurtainOff(userId, curtainid).enqueue(new Callback<Curtain>() {
+    public void slideCurtainValue(String userId, String curtainId, String value){
+        curtainSpecificAPICall.slideCurtainValue(userId, curtainId, value).enqueue(new Callback<Curtain>() {
             @Override
             public void onResponse(Call<Curtain> call, Response<Curtain> response) {
-
+                Log.e("slideCurtainValue", "Response: "+response.code());
             }
 
             @Override
             public void onFailure(Call<Curtain> call, Throwable t) {
-
-            }
-        });
-
-    }
-
-    public void getCurtain(String userId, String curtainid){
-        curtainSpecificAPICall.getCurtain(userId, curtainid).enqueue(new Callback<Curtain>() {
-            @Override
-            public void onResponse(Call<Curtain> call, Response<Curtain> response) {
-
-            }
-
-            @Override
-            public void onFailure(Call<Curtain> call, Throwable t) {
-
-            }
-        });
-
-    }
-
-    public void slideCurtainValue(String userId, String curtainid, String value){
-        curtainSpecificAPICall.slideCurtainValue(userId, curtainid, value).enqueue(new Callback<Curtain>() {
-            @Override
-            public void onResponse(Call<Curtain> call, Response<Curtain> response) {
-
-            }
-
-            @Override
-            public void onFailure(Call<Curtain> call, Throwable t) {
-
+                Log.e("slideCurtainValue", "Failed Response: "+t.getMessage());
             }
         });
     }

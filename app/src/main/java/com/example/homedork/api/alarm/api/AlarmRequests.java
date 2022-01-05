@@ -2,15 +2,14 @@ package com.example.homedork.api.alarm.api;
 
 import android.content.Context;
 import android.os.Build;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.annotation.RequiresApi;
 
 import com.example.homedork.api.InitializeAPI;
-import com.example.homedork.api.curtain.api.CurtainSpecificAPICall;
 import com.example.homedork.api.model.device.Alarm;
-import com.example.homedork.api.model.device.Curtain;
 import com.example.homedork.dashboard.DashboardService;
 
 import java.util.List;
@@ -58,7 +57,7 @@ public class AlarmRequests {
         alarmSpecificAPICall.turnAlarmOn(userId, alarmid).enqueue(new Callback<Alarm>() {
             @Override
             public void onResponse(Call<Alarm> call, Response<Alarm> response) {
-
+                Log.e("turnAlarmOff", "Response: "+response.code());
             }
 
             @Override

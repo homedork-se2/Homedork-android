@@ -18,7 +18,7 @@ public interface ThermometerSpecificAPICall {
     @PUT("hd-api/users/{userId}/therms/{thermId}/turnOff")
     Call<Thermometer> turnThermometerOff(@Path("userId") String userId,@Path("thermId") String thermId);
 
-    @PUT("hd-api/users/{userId}/therms/{thermId}/turnOff")
+    @PUT("hd-api/users/{userId}/therms/{thermId}/turnOn")
     Call<Thermometer> turnThermometerOn(@Path("userId") String userId,@Path("thermId") String thermId);
 
     @GET("hd-api/users/{userId}/therms/{thermId}")
