@@ -20,7 +20,7 @@ public interface AlarmSpecificAPICall {
     Call<Alarm> slideAlarmValue(@Path("userId") String userId, @Path("alarmId") String alarmId, @Path("value") String value);
 
     @PUT("hd-api/users/{userId}/alarms/{alarmId}/turnOff")
-    Call<Alarm> turnAlarmOff(@Path("alarmId") String alarmId, @Path("userId") String userId);
+    Call<Alarm> turnAlarmOff( @Path("userId") String userId, @Path("alarmId") String alarmId);
 
     @PUT("hd-api/users/{userId}/alarms/{alarmId}/turnOn")
     Call<Alarm> turnAlarmOn(@Path("userId") String userId, @Path("alarmId") String alarmId);

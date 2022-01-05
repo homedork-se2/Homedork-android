@@ -36,13 +36,13 @@ public interface FanSpecificAPICall {
     Call<List<Fan>> getFans(@Path("userId") String userId);
 
     @PUT("hd-api/users/{userId}/fans/{fanId}/adjust/{value}")
-    Call<Fan> slideFanValue(@Path("fanId") String lampId, @Path("value") String value, @Path("userId") String userId);
+    Call<Fan> slideFanValue(@Path("userId") String userId, @Path("fanId") String lampId,  @Path("value") String value);
 
     @PUT("hd-api/users/{userId}/fans/{fanId}/turnOff")
-    Call<Fan> turnFanOff(@Path("fanId") String lampId, @Path("userId") String userId);
+    Call<Fan> turnFanOff( @Path("userId") String userId, @Path("fanId") String lampId);
 
     @PUT("hd-api/users/{userId}/fans/{fanId}/turnOn")
-    Call<Fan> turnFanOn( @Path("fanId") String lampId, @Path("userId") String userId);
+    Call<Fan> turnFanOn( @Path("userId") String userId, @Path("fanId") String lampId);
 
 
 

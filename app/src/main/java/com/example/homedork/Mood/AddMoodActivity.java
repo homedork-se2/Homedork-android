@@ -87,10 +87,11 @@ public class AddMoodActivity extends AppCompatActivity {
         //Replace these dummy data with API call
 
         devicesList.add("Lamp");
+        devicesList.add("Fan");
         devicesList.add("Curtains");
-        devicesList.add("Television");
-        devicesList.add("Computer");
-        devicesList.add("Mobile");
+        devicesList.add("Alarm");
+        devicesList.add("Thermometer");
+        devicesList.add("Window");
 
         initDevicesDialog();
         initListeners();
