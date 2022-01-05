@@ -14,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
 import com.example.homedork.R;
+import com.example.homedork.api.alarm.api.AlarmRequests;
+import com.example.homedork.api.curtain.api.CurtainRequests;
 import com.example.homedork.api.fan.api.FanRequests;
 import com.example.homedork.api.lamp.api.LampRequests;
 import com.example.homedork.api.model.device.Alarm;
@@ -108,9 +110,10 @@ public class DashboardService {
         rangeSlider.setLayoutParams(paramss);
         paramss.width = 550;
 
-        rangeSliderToServerLight(rangeSlider, String.valueOf(lamp.id));
-        switchButton(switchMaterial, String.valueOf(lamp.id));
-
+        rangeSliderToServerLight(rangeSlider, lamp.getId(),"Lamp");
+       // rangeSliderToServerLight(rangeSlider, String.valueOf(lamp.id));
+       // switchButton(switchMaterial, String.valueOf(lamp.id));
+        switchButton(switchMaterial, lamp.id, "Lamp");
     }
 
     public void addDynamicRangeSlide(LinearLayout layout, Context context, int id, String userId, Fan fan) {
@@ -207,9 +210,10 @@ public class DashboardService {
         l.addView(switchMaterial);
         layout.addView(l);
 
-
-        rangeSliderToServerLight(rangeSlider, String.valueOf(fan.id));
-        switchButton(switchMaterial, String.valueOf(fan.id));
+        rangeSliderToServerLight(rangeSlider, fan.getId(),"Fan");
+      //  rangeSliderToServerLight(rangeSlider, String.valueOf(fan.id));
+        //switchButton(switchMaterial, String.valueOf(fan.id));
+        switchButton(switchMaterial, fan.id, "Fan");
     }
 
 
@@ -307,9 +311,10 @@ public class DashboardService {
         l.addView(switchMaterial);
         layout.addView(l);
 
-
-        rangeSliderToServerLight(rangeSlider, String.valueOf(thermometer.id));
-        switchButton(switchMaterial, String.valueOf(thermometer.id));
+        rangeSliderToServerLight(rangeSlider, thermometer.getId(),"Thermometer");
+       // rangeSliderToServerLight(rangeSlider, String.valueOf(thermometer.id));
+        //switchButton(switchMaterial, String.valueOf(thermometer.id));
+        switchButton(switchMaterial, thermometer.id, "Thermometer");
     }
 
     public void addDynamicRangeSlide(LinearLayout layout, Context context, int id, String userId, Curtain curtain) {
@@ -407,8 +412,9 @@ public class DashboardService {
         layout.addView(l);
 
 
-        rangeSliderToServerLight(rangeSlider, String.valueOf(curtain.id));
-        switchButton(switchMaterial, String.valueOf(curtain.id));
+       rangeSliderToServerLight(rangeSlider, curtain.getId(),"Curtain");
+       // switchButton(switchMaterial, String.valueOf(curtain.id));
+        switchButton(switchMaterial, curtain.id, "Curtain");
     }
 
 
@@ -507,40 +513,116 @@ public class DashboardService {
         layout.addView(l);
 
 
-        rangeSliderToServerLight(rangeSlider, String.valueOf(alarm.id));
-        switchButton(switchMaterial, String.valueOf(alarm.id));
+        rangeSliderToServerLight(rangeSlider, alarm.getId(), "Alarm");
+        //switchButton(switchMaterial, String.valueOf(alarm.id));
+        switchButton(switchMaterial, alarm.id, "Alarm");
     }
 
 
 
 
-    public void rangeSliderToServerLight(RangeSlider switchMaterial, String fanId) {
+    public void rangeSliderToServerLight(RangeSlider switchMaterial, String deviceId, String nameOfDevice) {
         switchMaterial.addOnChangeListener(new RangeSlider.OnChangeListener() {
             @Override
             public void onValueChange(@NonNull RangeSlider slider, float value, boolean fromUser) {
-                FanRequests fanRequests = new FanRequests();
-                List<Float> slideValues = slider.getValues();
-                fanRequests.slideFanValue("123", fanId, String.valueOf(slideValues.get(0)));
+
+                if (nameOfDevice.equals("Fan")) {
+                    FanRequests fanRequests = new FanRequests();
+                    List<Float> slideValues = slider.getValues();
+                    fanRequests.slideFanValue("123", deviceId, String.valueOf(slideValues.get(0)));
+                }
+                if (nameOfDevice.equals("Alarm")) {
+                    AlarmRequests alarmRequests = new AlarmRequests();
+                    List<Float> slideAlarmValue = slider.getValues();
+                    alarmRequests.slideAlarmValue("123", deviceId, String.valueOf(slideAlarmValue.get(0)));
+                }
+
+                if (nameOfDevice.equals("Lamp")) {
+                    LampRequests lampRequests = new LampRequests();
+                    List<Float> slideLampValue = slider.getValues();
+                    lampRequests.slideLampValue("123", deviceId, Float.valueOf(String.valueOf(slideLampValue.get(0))));
+                }
+
+
+
+
+                if (nameOfDevice.equals("Curtain")) {
+                    CurtainRequests curtainRequests = new CurtainRequests();
+                    List<Float> slideCurtainValue = slider.getValues();
+                    curtainRequests.slideCurtainValue("123", deviceId, String.valueOf(slideCurtainValue.get(0)));
+                }
+                if (nameOfDevice.equals("Thermometer")) {
+                    ThermometerRequests thermometerRequests = new ThermometerRequests();
+                    List<Float> slideThermValue = slider.getValues();
+                    thermometerRequests.slideThermValue("123", deviceId, String.valueOf(slideThermValue.get(0)));
+                }
             }
         });
     }
 
-    public void switchButton(SwitchMaterial switchMaterial, String buttonId) {
+    public void switchButton(SwitchMaterial switchMaterial, String buttonId,String nameOfDevice) {
 
 
         switchMaterial.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                LampRequests lampRequests = new LampRequests();
-                if (isChecked) {
-                    lampRequests.turnLampOn("123", buttonId);
+                if (nameOfDevice.equals("Lamp")) {
+                    LampRequests lampRequests = new LampRequests();
+                    if (isChecked) {
+                        lampRequests.turnLampOn("123", buttonId);
+                    }
+
+                    if (!isChecked) {
+                        lampRequests.turnLampOff("123", buttonId);
+                    }
+                }
+                if (nameOfDevice.equals("Fan")) {
+                    FanRequests fanRequests = new FanRequests();
+                    if (isChecked) {
+                        fanRequests.turnFanOn("123", buttonId);
+                    }
+
+                    if (!isChecked) {
+                        fanRequests.turnFanOff("123", buttonId);
+                    }
                 }
 
-                if (!isChecked) {
-                    lampRequests.turnLampOff("123", buttonId);
+
+                if (nameOfDevice.equals("Curtain")) {
+                    CurtainRequests curtainRequests = new CurtainRequests();
+                    if (isChecked) {
+                        curtainRequests.turnCurtainOn("123", buttonId);
+                    }
+
+                    if (!isChecked) {
+                        curtainRequests.turnCurtainOff("123", buttonId);
+                    }
+                }
+
+
+                if (nameOfDevice.equals("Alarm")) {
+                    AlarmRequests alarmRequests = new AlarmRequests();
+                    if (isChecked) {
+                        alarmRequests.turnAlarmOn("123", buttonId);
+                    }
+
+                    if (!isChecked) {
+                        alarmRequests.turnAlarmOff("123", buttonId);
+                    }
+                }
+                if (nameOfDevice.equals("Thermometer")) {
+                    ThermometerRequests thermometerRequests = new ThermometerRequests();
+                    if (isChecked) {
+                        thermometerRequests.turnThermOn("123", buttonId);
+                    }
+
+                    if (!isChecked) {
+                        thermometerRequests.turnThermOff("123", buttonId);
+                    }
                 }
             }
         });
+
 
     }
 }
