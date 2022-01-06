@@ -16,6 +16,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.homedork.R;
 import com.example.homedork.adapters.DevicesAdapter;
+import com.example.homedork.api.PersonlizedCommandsAPI;
+import com.example.homedork.api.model.device.Alarm;
+import com.example.homedork.api.model.device.Curtain;
+import com.example.homedork.api.model.device.Fan;
+import com.example.homedork.api.model.device.Lamp;
+import com.example.homedork.api.model.device.Thermometer;
+import com.example.homedork.api.model.device.Window;
 import com.example.homedork.models.Mood;
 
 import java.util.ArrayList;
@@ -27,12 +34,18 @@ public class AddMoodActivity extends AppCompatActivity {
     List<String> selectedDevicesList = new ArrayList<>();
 
     DevicesAdapter adapter;
-
+PersonlizedCommandsAPI personlizedCommandsAPI = new PersonlizedCommandsAPI();
     Button btnSave;
     ImageButton btnAddNewDevice;
     RecyclerView rvDevices;
     EditText etMoodTitle;
-
+   /*      List<Alarm> alarms = personlizedCommandsAPI.getAlarms("123");
+    List<Curtain> curtains = personlizedCommandsAPI.getCurtains("123");
+    List<Lamp> lamps = personlizedCommandsAPI.getLamp("123");
+    List<Thermometer> thermometers = personlizedCommandsAPI.getThermometer("123");
+    List<Window> windows= personlizedCommandsAPI.getWindow("123");
+    List<Fan> fans=personlizedCommandsAPI.getFan("123");
+    */
     AlertDialog.Builder builder;
 
     @Override
