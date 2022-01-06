@@ -3,31 +3,21 @@ package com.example.homedork.Calendar;
 
 public class Events {
 
-    private String eventName,eventDate,eventTime;
-
+    private String eventName, eventTime;
+    private String eventDate;
     private String eventID;
 
-
-  //  public Events() {
-   // }
-
-   /* public Events( String eventName, String eventID) {
-
-        this.eventName = eventName;
-
-        this.eventID = eventID;
-
-    }
-
-    */
 
     public Events(String eventName, String eventDate, String eventTime) {
 
         this.eventName = eventName;
         this.eventDate = eventDate;
-        this.eventTime=eventTime;
+        this.eventTime = eventTime;
 
 
+    }
+
+    public Events() {
 
     }
 
@@ -57,7 +47,6 @@ public class Events {
     }
 
 
-
     public String getEventName() {
         return eventName;
     }
@@ -67,12 +56,13 @@ public class Events {
     }
 
 
-
     @Override
     public String toString() {
         return "Events{" +
-                "eventname='" + eventName + '\'' +
-                ", eventID=" + eventID +
+                "eventName='" + eventName + '\'' +
+                ", eventDate='" + eventDate + '\'' +
+                ", eventTime='" + eventTime + '\'' +
+                ", eventID='" + eventID + '\'' +
                 '}';
     }
 }

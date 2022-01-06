@@ -24,9 +24,8 @@ import java.time.LocalTime;
 import java.util.UUID;
 
 @RequiresApi(api = Build.VERSION_CODES.O)
-public class EventEditActivity extends AppCompatActivity
-{
-    private EditText eventNameET,timee;
+public class EventEditActivity extends AppCompatActivity {
+    private EditText eventNameET, timee;
     private TextView eventDateTV, eventTimeTV, eventIDd;
     private FirebaseAuth mAuth;
     private LocalTime time;
@@ -46,8 +45,7 @@ public class EventEditActivity extends AppCompatActivity
         eventTimeTV.setText("Time: " + CalendarUtils.formattedTime(time));
     }
 
-    private void initWidgets()
-    {
+    private void initWidgets() {
         eventNameET = findViewById(R.id.eventNameET);
         timee = findViewById(R.id.timee);
         eventDateTV = findViewById(R.id.eventDateTV);
@@ -55,8 +53,7 @@ public class EventEditActivity extends AppCompatActivity
 
     }
 
-    public void saveEventAction(View view)
-    {
+    public void saveEventAction(View view) {
         String eventName = eventNameET.getText().toString().trim();
         String eventDate = eventDateTV.getText().toString().trim();
         String eventTime = eventTimeTV.getText().toString().trim();
@@ -65,11 +62,10 @@ public class EventEditActivity extends AppCompatActivity
         Event.eventsList.add(newEvent);
 
 
-
         System.out.println(mAuth);
 
 
-        Events event = new Events(eventName,eventDate,eventTime);
+        Events event = new Events(eventName, eventDate, eventTime);
         System.out.println(FirebaseDatabase.getInstance());
         System.out.println(FirebaseDatabase.getInstance().getReference("Events")
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid()));
@@ -78,7 +74,7 @@ public class EventEditActivity extends AppCompatActivity
 
         UUID uuid = UUID.randomUUID();
 
-        System.out.println("new event id here"+uuid);
+        System.out.println("new event id here" + uuid);
 
         FirebaseDatabase.getInstance().getReference("Events")
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(String.valueOf(uuid))
@@ -97,7 +93,6 @@ public class EventEditActivity extends AppCompatActivity
 
             }
         });
-
 
 
         finish();

@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.homedork.Calendar.CalendarMain;
+import com.example.homedork.Calendar.CalenderApi;
 import com.example.homedork.Fun.FunMenu;
 import com.example.homedork.Mood.MoodsActivity;
 import com.example.homedork.api.alarm.api.AlarmRequests;
@@ -49,29 +50,32 @@ public class Dashbord2 extends AppCompatActivity {
         setContentView(R.layout.dashboard);
 
 
+        CalenderApi calenderApi = new CalenderApi();
+        calenderApi.read();
+
         populateDeviceScroller();
-        Toolbar toolbar= findViewById(R.id.nav_viewside);
+        Toolbar toolbar = findViewById(R.id.nav_viewside);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
                     case R.id.navigation_game:
                         startActivity(new Intent(getApplicationContext(), FunMenu.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.navigation_voice:
                         startActivity(new Intent(getApplicationContext(), voice_command.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.navigation_dashboard:
                         return true;
                     case R.id.navigation_calendar:
                         startActivity(new Intent(getApplicationContext(), CalendarMain.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.navigation_settings:
                         startActivity(new Intent(getApplicationContext(), Profile.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
                 }
                 return false;
@@ -97,7 +101,7 @@ public class Dashbord2 extends AppCompatActivity {
                         return true;
                     case R.id.navigation_voice:
                         startActivity(new Intent(getApplicationContext(), voice_command.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.navigation_settings:
                         startActivity(new Intent(getApplicationContext(), Profile.class));

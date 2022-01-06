@@ -16,28 +16,24 @@ public class Event {
     public Event(String eventName, String eventDate, String eventTime) {
     }
 
-    public static ArrayList<Event> eventsForDate(LocalDate date)
-    {
+    public static ArrayList<Event> eventsForDate(LocalDate date) {
         ArrayList<Event> events = new ArrayList<>();
 
-        for(Event event : eventsList)
-        {
-            if(event.getDate().equals(date))
+        for (Event event : eventsList) {
+            if (event.getDate().equals(date))
                 events.add(event);
         }
 
         return events;
     }
 
-    public static ArrayList<Event> eventsForDateAndTime(LocalDate date, LocalTime time)
-    {
+    public static ArrayList<Event> eventsForDateAndTime(LocalDate date, LocalTime time) {
         ArrayList<Event> events = new ArrayList<>();
 
-        for(Event event : eventsList)
-        {
+        for (Event event : eventsList) {
             int eventHour = event.time.getHour();
             int cellHour = time.getHour();
-            if(event.getDate().equals(date) && eventHour == cellHour)
+            if (event.getDate().equals(date) && eventHour == cellHour)
                 events.add(event);
         }
 
@@ -49,40 +45,33 @@ public class Event {
     private LocalDate date;
     private LocalTime time;
 
-    public Event(String name, LocalDate date, LocalTime time)
-    {
+    public Event(String name, LocalDate date, LocalTime time) {
         this.name = name;
         this.date = date;
         this.time = time;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public LocalDate getDate()
-    {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date)
-    {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public LocalTime getTime()
-    {
+    public LocalTime getTime() {
         return time;
     }
 
-    public void setTime(LocalTime time)
-    {
+    public void setTime(LocalTime time) {
         this.time = time;
     }
 }
