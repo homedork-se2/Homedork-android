@@ -20,6 +20,7 @@ import com.example.homedork.R;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class WeekViewActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener {
 
@@ -40,8 +41,7 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         setWeekView();
     }
 
-    private void initWidgets()
-    {
+    private void initWidgets() {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         monthYearText = findViewById(R.id.monthYearTV);
         eventListView = findViewById(R.id.eventListView);
@@ -81,15 +81,14 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         setEventAdpater();
     }
 
-    private void setEventAdpater()
-    {
-        ArrayList<Event> dailyEvents = Event.eventsForDate(CalendarUtils.selectedDate);
+    private void setEventAdpater() {
+        ArrayList<Events> dailyEvents = CalenderApi.eventsForDate(CalendarUtils.selectedDate);
         EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEvents);
         eventListView.setAdapter(eventAdapter);
+
     }
 
-    public void newEventAction(View view)
-    {
+    public void newEventAction(View view) {
         startActivity(new Intent(this, EventEditActivity.class));
     }
 
